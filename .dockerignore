@@ -1,0 +1,6 @@
+.git
+.cache
+.idea
+.env
+node_modules
+*.map

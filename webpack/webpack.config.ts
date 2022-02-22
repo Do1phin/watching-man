@@ -25,6 +25,10 @@ const config: webpack.Configuration = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
+  // devServer: {
+  //   host: '0.0.0.0',
+  //   port: 80,
+  // },
   module: {
     rules: [ruleBabel, ruleHtml, rulePic, ruleCss],
   },
