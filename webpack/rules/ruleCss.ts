@@ -1,4 +1,4 @@
-import * as webpack from 'webpack';
+import webpack from 'webpack';
 
 import { loaderStyle } from '../loaders/loaderStyle';
 import { loaderCss } from '../loaders/loaderCss';
@@ -8,6 +8,6 @@ export const ruleCss: webpack.RuleSetRule = {
   test: /\.(scss|sass|css)$/i,
   use: [loaderStyle, loaderCss, loaderSass],
   generator: {
-    filename: './css/[name][query][ext]',
+    filename: './assets/css/[name].[contenthash:8].[ext]',
   },
 };

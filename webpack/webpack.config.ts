@@ -1,4 +1,5 @@
-import * as webpack from 'webpack';
+import webpack from 'webpack';
+const { resolve } = require('path');
 
 import { ruleBabel } from './rules/ruleBabel';
 import { ruleHtml } from './rules/ruleHtml';
@@ -7,28 +8,41 @@ import { rulePic } from './rules/rulePic';
 import { ruleCss } from './rules/ruleCss';
 
 const config: webpack.Configuration = {
-  mode: 'development',
   entry: {
     index: './src/index.tsx',
   },
   output: {
-    publicPath: 'dist',
-    filename: '[name].[contenthash:8].js',
+    path: resolve(__dirname, '../dist'),
+    publicPath: '/',
+    filename: 'js/[name].[contenthash:8].js',
+    chunkFilename: 'js/[name].[contenthash:8].chunk.js',
     clean: true,
   },
-  devtool: 'source-map',
+  performance: {
+    hints: false,
+  },
+  devtool: 'inline-source-map',
   optimization: {
+    moduleIds: 'deterministic',
+    runtimeChunk: 'single',
     splitChunks: {
-      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          name: 'vendors',
+          test: /node_modules/,
+          chunks: 'all',
+          minSize: 30000,
+          maxSize: 250000,
+          minChunks: 1,
+          maxAsyncRequests: 5,
+          maxInitialRequests: 3,
+        },
+      },
     },
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
-  // devServer: {
-  //   host: '0.0.0.0',
-  //   port: 80,
-  // },
   module: {
     rules: [ruleBabel, ruleHtml, rulePic, ruleCss],
   },
