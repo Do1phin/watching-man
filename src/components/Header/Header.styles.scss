@@ -1,0 +1,53 @@
+@import 'public/styles/main';
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.header {
+  background-color: $color-bg-gray-dark;
+  flood-color: aquamarine;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+  &__raw {
+    display: flex;
+    font-size: 18px;
+    color: $color-text-white;
+  }
+
+  &__list {
+    display: flex;
+    .header__item {
+      padding: 10px 20px;
+      &:hover {
+        background-color: $color-bg-gray;
+      }
+    }
+
+    .header__item:not(:last-child) {
+      border-right: 1px solid $color-bg-gray;
+    }
+  }
+
+  &__logo {
+    margin: auto 150px auto 0;
+  }
+
+  &__map-wrapper {
+    margin: auto 50px auto auto;
+    .map__btn:before {
+      width: 20px;
+      height: auto;
+      content: '';
+    }
+  }
+
+  &__cabinet-wrapper {
+    margin: auto 50px auto 0;
+  }
+
+  &__lang-dropdown-wrapper {
+    margin: auto 50px auto 0;
+  }
+}
