@@ -4,6 +4,20 @@ import ChainedBackend from 'i18next-chained-backend';
 import BrowserLanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
+import * as translationsUA from './public/locales/ua/translations.json';
+import * as translationsRU from './public/locales/ru/translations.json';
+
+const resources: object = {
+  ua: {
+    translations: translationsUA,
+  },
+  ru: {
+    translations: translationsRU,
+  },
+};
+
+const fallBackLanguage: string = 'ua';
+
 i18next
   .use(ChainedBackend)
   .use(BrowserLanguageDetector)
@@ -12,25 +26,29 @@ i18next
   .init(
     {
       compatibilityJSON: 'v3',
-      fallbackLng: 'ua',
+      fallbackLng: fallBackLanguage,
       supportedLngs: ['ua', 'ru'],
       lowerCaseLng: true,
       cleanCode: true,
       debug: true,
       detection: {},
-      ns: ['special', 'common'],
-      defaultNS: 'special',
-      backend: {
-        // backends: [
-        //   BrowserLanguageDetector,
-        //   HttpBackend,
-        //   initReactI18next
-        // ],
-        // backendOptions: [{
-        //   loadPath: "https://raw.githubusercontent.com/i18next/i18next-gitbook/master/locales/{{lng}}/{{ns}}.json",
-        //   crossDomain: true
-        // }]
+      ns: ['translations'],
+      defaultNS: 'translations',
+      keySeparator: false,
+      resources: {
+        ...resources,
       },
+      // backend: {
+      // backends: [
+      //   BrowserLanguageDetector,
+      //   HttpBackend,
+      //   initReactI18next
+      // ],
+      // backendOptions: [{
+      //   loadPath: "https://raw.githubusercontent.com/i18next/i18next-gitbook/master/locales/{{lng}}/{{ns}}.json",
+      //   crossDomain: true
+      // }]
+      // },
     },
     function (err, t) {
       // init set content

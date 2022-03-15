@@ -12,14 +12,26 @@
 
   &__raw {
     display: flex;
+    align-items: center;
     font-size: 18px;
     color: $color-text-white;
   }
 
+  &__logo {
+    padding: 5px 5px;
+  }
+
+  &__nav {
+    margin-left: 150px;
+    margin-right: auto;
+  }
+
   &__list {
     display: flex;
+
     .header__item {
       padding: 10px 20px;
+
       &:hover {
         background-color: $color-bg-gray;
       }
@@ -30,24 +42,24 @@
     }
   }
 
-  &__logo {
-    margin: auto 150px auto 0;
-  }
-
   &__map-wrapper {
-    margin: auto 50px auto auto;
+    padding: 5px 5px;
+    margin-left: 70px;
+
     .map__btn:before {
       width: 20px;
-      height: auto;
       content: '';
     }
   }
 
   &__cabinet-wrapper {
-    margin: auto 50px auto 0;
+    padding: 5px 5px;
+    margin-left: 20px;
   }
 
   &__lang-dropdown-wrapper {
-    margin: auto 50px auto 0;
+    padding: 5px 5px;
+    margin-left: 20px;
+    position: relative;
   }
 }
