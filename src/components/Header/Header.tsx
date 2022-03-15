@@ -1,10 +1,14 @@
 import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
+
+import { Dropdown } from '../Dropdown/Dropdown';
 
 import './Header.styles.scss';
-import { Home } from "../../pages/Home/Home";
 
 export const Header: FC = (): JSX.Element => {
+  const { t } = useTranslation()
+
   return (
     <>
       <header className='header'>
@@ -12,8 +16,8 @@ export const Header: FC = (): JSX.Element => {
           <div className='header__raw'>
             <img
               src='./images/site-logo-transp.png'
-              width='70'
-              height='40'
+              width='75'
+              height='45'
               alt='site-logo'
               className='header__logo'
               aria-label='Логотип сайта'
@@ -22,27 +26,23 @@ export const Header: FC = (): JSX.Element => {
             <nav className='header__nav'>
               <ul className='header__list'>
                 <NavLink to='/about'>
-                  <li className='header__item'>О проекте</li>
+                  <li className='header__item'>{t('about')}</li>
                 </NavLink>
                 <NavLink to='/organizations'>
-                  <li className='header__item'>Организации</li>
+                  <li className='header__item'>{t('organizations')}</li>
                 </NavLink>
                 <NavLink to='/map'>
-                  <li className='header__item'>Карта</li>
+                  <li className='header__item'>{t('map')}</li>
                 </NavLink>
               </ul>
             </nav>
 
-            <div className='header__map-wrapper map'>
-              [mock map block]
-            </div>
+            <div className='header__map-wrapper map'>[mock map block]</div>
 
-            <div className='header__cabinet-wrapper cabinet'>
-              [mock auth block]
-            </div>
+            <div className='header__cabinet-wrapper cabinet'>[mock auth block]</div>
 
             <div className='header__lang-dropdown-wrapper'>
-              [mock lng select]
+              <Dropdown />
             </div>
           </div>
         </div>
