@@ -8,6 +8,6 @@ export const ruleCss: webpack.RuleSetRule = {
   test: /\.(scss|sass|css)$/i,
   use: [loaderStyle, loaderCss, loaderSass],
   generator: {
-    filename: './assets/css/[name].[contenthash:8].[ext]',
+    filename: './css/[name][query][ext]',
   },
 };

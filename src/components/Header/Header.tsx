@@ -1,13 +1,15 @@
 import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
 import { Dropdown } from '../Dropdown/Dropdown';
 
 import './Header.styles.scss';
 
+import siteLogo from '../../../public/images/site-logo-transp.png';
+
 export const Header: FC = (): JSX.Element => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <>
@@ -15,7 +17,7 @@ export const Header: FC = (): JSX.Element => {
         <div className='header__container container'>
           <div className='header__raw'>
             <img
-              src='./images/site-logo-transp.png'
+              src={siteLogo}
               width='75'
               height='45'
               alt='site-logo'
