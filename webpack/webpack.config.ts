@@ -1,4 +1,5 @@
-import webpack from 'webpack';
+import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
+import type { Configuration } from 'webpack';
 const { resolve } = require('path');
 
 import { ruleBabel } from './rules/ruleBabel';
@@ -7,7 +8,7 @@ import { pluginHtml } from './plugins/pluginHtml';
 import { rulePic } from './rules/rulePic';
 import { ruleCss } from './rules/ruleCss';
 
-const config: webpack.Configuration = {
+const config: Configuration | DevServerConfiguration = {
   entry: {
     index: './src/index.tsx',
   },
@@ -20,6 +21,9 @@ const config: webpack.Configuration = {
   },
   performance: {
     hints: false,
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   devtool: 'inline-source-map',
   optimization: {
