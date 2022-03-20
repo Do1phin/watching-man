@@ -3,21 +3,28 @@ import { useTranslation } from 'react-i18next';
 
 import './Dropdown.style.scss';
 
+import ua from '../../../public/images/ua.png';
+import ru from '../../../public/images/ru.png';
+
 interface IItem {
   name: string;
   value: string;
+  flag: any;
 }
 
 const items = [
   {
     name: 'ua',
     value: 'Українська',
+    flag: ua,
   },
   {
     name: 'ru',
     value: 'Русский',
+    flag: ru,
   },
 ];
+
 
 const setLangDataToLocalStorage = (item: IItem): void => {
   if (localStorage.getItem('language-name') !== item.name) {
@@ -31,14 +38,14 @@ const getLangNameFromLocalStorage = (): string | null => {
     return localStorage.getItem('language-name');
   }
   return 'ua';
-}
+};
 
 const getLangValueFromLocalStorage = (): string | null => {
   if (localStorage.getItem('language-value')) {
     return localStorage.getItem('language-value');
   }
   return 'Українська';
-}
+};
 
 export const Dropdown = (): JSX.Element => {
   const { i18n } = useTranslation();
@@ -61,13 +68,9 @@ export const Dropdown = (): JSX.Element => {
 
   const listItems = (items): JSX.Element => {
     return items.map((item: IItem) => (
-      <li
-        className='dropdown__item'
-        key={item.value}
-        onClick={() => selectItem(item)}
-      >
+      <li className='dropdown__item' key={item.value} onClick={() => selectItem(item)}>
         <img
-          src={`./images/${item.name}.png`}
+          src={item.flag}
           width='26px'
           height='18px'
           alt='Country flag'

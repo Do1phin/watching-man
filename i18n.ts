@@ -34,7 +34,7 @@ i18next
       detection: {},
       ns: ['translations'],
       defaultNS: 'translations',
-      keySeparator: false,
+      keySeparator: '.',
       resources: {
         ...resources,
       },
