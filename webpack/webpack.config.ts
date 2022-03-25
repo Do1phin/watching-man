@@ -1,6 +1,6 @@
 import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
 import type { Configuration } from 'webpack';
-const { resolve } = require('path');
+const path = require('path');
 
 import { ruleBabel } from './rules/ruleBabel';
 import { ruleHtml } from './rules/ruleHtml';
@@ -13,7 +13,7 @@ const config: Configuration | DevServerConfiguration = {
     index: './src/index.tsx',
   },
   output: {
-    path: resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, '../dist'),
     publicPath: '/',
     filename: 'js/[name].[contenthash:8].js',
     chunkFilename: 'js/[name].[contenthash:8].chunk.js',
@@ -46,6 +46,14 @@ const config: Configuration | DevServerConfiguration = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    alias: {
+      components: path.resolve(__dirname, './src/components/'),
+      pages: path.resolve(__dirname, './src/pages/'),
+      layouts: path.resolve(__dirname, './src/layouts/'),
+      images: path.resolve(__dirname, './public/images/'),
+      styles: path.resolve(__dirname, './public/styles/'),
+      locales: path.resolve(__dirname, './public/locales/'),
+    },
   },
   module: {
     rules: [ruleBabel, ruleHtml, rulePic, ruleCss],

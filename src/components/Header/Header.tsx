@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { Dropdown } from '../Dropdown/Dropdown';
+import { Dropdown } from '../index';
 
 import './Header.styles.scss';
 
@@ -16,26 +16,28 @@ export const Header: FC = (): JSX.Element => {
       <header className='header'>
         <div className='header__container container'>
           <div className='header__raw'>
-            <img
-              src={siteLogo}
-              width='75'
-              height='45'
-              alt='site-logo'
-              className='header__logo'
-              aria-label='Логотип сайта'
-            />
+            <Link to='/'>
+              <img
+                src={siteLogo}
+                width='75'
+                height='45'
+                alt='site-logo'
+                className='header__logo'
+                aria-label='Логотип сайта'
+              />
+            </Link>
 
             <nav className='header__nav'>
               <ul className='header__list'>
-                <NavLink to='/about'>
-                  <li className='header__item'>{t('about')}</li>
-                </NavLink>
-                <NavLink to='/organizations'>
-                  <li className='header__item'>{t('organizations')}</li>
-                </NavLink>
-                <NavLink to='/map'>
-                  <li className='header__item'>{t('map')}</li>
-                </NavLink>
+                <li className='header__item'>
+                  <NavLink to='/about'>{t('header.about')}</NavLink>
+                </li>
+                <li className='header__item'>
+                  <NavLink to='/organizations'>{t('header.organizations')}</NavLink>
+                </li>
+                <li className='header__item'>
+                  <NavLink to='/map'>{t('header.map')}</NavLink>
+                </li>
               </ul>
             </nav>
 
