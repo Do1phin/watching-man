@@ -3,10 +3,10 @@
 .dropdown {
   font-size: 18px;
   font-weight: 500;
-  //position: relative;
   z-index: 100;
-  //top: 10px;
   display: inline-block;
+  color: $color-text-white;
+  width: 150px;
 
   &__flag {
     width: 26px;
@@ -14,11 +14,10 @@
   }
 
   &__title {
-    margin-left: 6px;
+    margin: 0 0 0 6px;
   }
 
   &__btn {
-    width: 150px;
     height: 30px;
     background-color: $color-bg-gray;
     display: flex;
@@ -45,16 +44,12 @@
     display: none;
     background-color: $color-bg-gray;
     margin-top: 20px;
-
     width: 150px;
     position: absolute;
     border-radius: 6px;
-    //overflow: hidden;
-    //position: absolute;
 
     &.show {
       display: block;
-      //position: relative;
     }
 
     &:after {
@@ -73,6 +68,7 @@
   &__list {
     overflow: hidden;
     margin: 0 auto;
+    padding: 0;
   }
 
   &__item {
@@ -112,3 +108,6 @@
   }
 }
 
+.basic {
+  width: 50px;
+}

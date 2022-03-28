@@ -25,50 +25,24 @@ const items = [
   },
 ];
 
-
-const setLangDataToLocalStorage = (item: IItem): void => {
-  if (localStorage.getItem('language-name') !== item.name) {
-    localStorage.setItem('language-name', item.name);
-    localStorage.setItem('language-value', item.value);
-  }
-};
-
-const getLangNameFromLocalStorage = (): string | null => {
-  if (localStorage.getItem('language-name')) {
-    return localStorage.getItem('language-name');
-  }
-  return 'ua';
-};
-
-const getLangValueFromLocalStorage = (): string | null => {
-  if (localStorage.getItem('language-value')) {
-    return localStorage.getItem('language-value');
-  }
-  return 'Українська';
-};
-
 export const Dropdown = (): JSX.Element => {
   const { i18n } = useTranslation();
-
-  const [isShow, setIsShow] = useState(false);
-  const [languageValue, setLanguageValue] = useState(getLangValueFromLocalStorage);
-  const [languageName, setLanguageName] = useState(getLangNameFromLocalStorage);
   const dropdownRef = useRef(null);
+  const [isShow, setIsShow] = useState<boolean>(false);
+  const [lang, setLang] = useState<IItem>(items[0]);
 
   const toggleLangBtn = (): void => {
     setIsShow(!isShow);
   };
 
-  const selectItem = (item): void => {
-    setLanguageValue(item.value);
-    setLanguageName(item.name);
-    setLangDataToLocalStorage(item);
+  const changeLang = (item: IItem): void => {
+    setLang(item);
     i18n.changeLanguage(item.name);
   };
 
-  const listItems = (items): JSX.Element => {
-    return items.map((item: IItem) => (
-      <li className='dropdown__item' key={item.value} onClick={() => selectItem(item)}>
+  const DropdownItem = (item: IItem) => {
+    return (
+      <>
         <img
           src={item.flag}
           width='26px'
@@ -77,28 +51,30 @@ export const Dropdown = (): JSX.Element => {
           className='dropdown__flag'
         />
         <p className='dropdown__title'>{item.value}</p>
-      </li>
-    ));
+      </>
+    );
+  };
+
+  const listItems = (items: IItem[]): JSX.Element => {
+    return (
+      <ul className='dropdown__list'>
+        {items.map((item: IItem) => (
+          <li className='dropdown__item' key={item.value} onClick={() => changeLang(item)}>
+            {DropdownItem(item)}
+          </li>
+        ))}
+      </ul>
+    );
   };
 
   return (
     <>
       <div className='dropdown' ref={dropdownRef}>
         <div className='dropdown__btn' onClick={toggleLangBtn}>
-          <img
-            src={`./images/${languageName}.png`}
-            width='26px'
-            height='18px'
-            alt='Country flag'
-            className='dropdown__flag'
-          />
-          <p className='dropdown__title'>{languageValue}</p>
+          {DropdownItem(lang)}
           <span className='dropdown__arrow'></span>
         </div>
-
-        <div className={`dropdown__wrapper ${isShow ? 'show' : ''}`}>
-          <ul className='dropdown__list'>{listItems(items)}</ul>
-        </div>
+        <div className={`dropdown__wrapper ${isShow ? 'show' : ''}`}>{listItems(items)}</div>
       </div>
     </>
   );
