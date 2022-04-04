@@ -52,6 +52,24 @@
     "no-delete-var": "warn",
     "no-mixed-spaces-and-tabs": "warn",
     "quotes": ["error", "single"],
-    "semi": ["error", "always"]
+    "semi": ["error", "always"],
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+        "allowSeparatedGroups": true
+      }
+    ]
+//    "sort-keys": [
+//      "error",
+//      "asc",
+//      {
+//        "caseSensative": false,
+//        "natural": true
+//      }
+//    ]
   }
 }
