@@ -59,7 +59,13 @@
 
   &__lang-dropdown-wrapper {
     padding: 5px 5px;
-    margin-left: 20px;
+    margin-left: 0px;
     position: relative;
   }
+}
+
+.active {
+  border-bottom: 5px solid;
+  border-color: $color-logo-blue;
+  transition: border-bottom 0.5s ease-in 0s;
 }
