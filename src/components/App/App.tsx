@@ -2,10 +2,9 @@ import React, { FC, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { MainLayout } from '../../layouts/';
-import { Home } from '../../pages/';
-import { About } from '../../pages/';
+import { Home, About } from '../../pages/';
 
-import '../../../public/styles/normilize.scss';
+import '../../../public/styles/normalize.scss';
 import '../../../public/styles/base.scss';
 
 export const App: FC = (): JSX.Element => {

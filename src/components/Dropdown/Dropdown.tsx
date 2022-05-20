@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import _ from 'lodash';
 
 import './Dropdown.style.scss';
 
@@ -58,7 +59,7 @@ export const Dropdown = (): JSX.Element => {
   const listItems = (items: IItem[]): JSX.Element => {
     return (
       <ul className='dropdown__list'>
-        {items.map((item: IItem) => (
+        {_.map(items, (item: IItem) => (
           <li className='dropdown__item' key={item.value} onClick={() => changeLang(item)}>
             {DropdownItem(item)}
           </li>
