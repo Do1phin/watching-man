@@ -14,7 +14,7 @@ export const Header: FC = (): JSX.Element => {
   return (
     <>
       <header className='header'>
-        <div className='header__container container'>
+        <div className='header__container'>
           <div className='header__raw'>
             <Link to='/'>
               <img
@@ -36,11 +36,13 @@ export const Header: FC = (): JSX.Element => {
                   <NavLink to='/organizations'>{t('header.organizations')}</NavLink>
                 </li>
                 <li className='header__item'>
+                  <NavLink to='/issues'>{t('header.issues')}</NavLink>
+                </li>
+                <li className='header__item'>
                   <NavLink to='/map'>{t('header.map')}</NavLink>
                 </li>
               </ul>
             </nav>
-
             <div className='header__map-wrapper map'>[mock map block]</div>
 
             <div className='header__cabinet-wrapper cabinet'>[mock auth block]</div>
