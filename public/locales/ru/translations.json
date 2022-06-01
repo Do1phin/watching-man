@@ -2,7 +2,8 @@
   "header": {
     "about": "О проекте",
     "organizations": "Организации",
-    "map": "Карта"
+    "map": "Карта",
+    "issues": "Обращения"
   },
   "about": {
     "supervision": {
