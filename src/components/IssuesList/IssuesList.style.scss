@@ -1,0 +1,18 @@
+@import 'public/styles/_vars';
+
+.issue {
+    margin-top: 20px;
+    background-color: gray;
+    background: $color-bg-gray-light;
+}
+
+.issue__list {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin-right: 20px;
+}
+
+body {
+    background: $color-bg-gray-light;
+}

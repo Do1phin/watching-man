@@ -22,3 +22,31 @@ ul {
 li {
   list-style-type: none;
 }
+
+.body-container {
+  max-width: 90%;
+  padding: 0 15px;
+  margin: 0 auto;
+  text-decoration: none;
+  @media (min-width: 595px) {
+  
+  }
+  @media (max-width: 600px) {
+  
+  }
+  @media (max-width: 768px) {
+    
+  }
+  @media (max-width: 889px) {
+    
+  }
+  @media (max-width: 1200px) {
+    max-width: 868px;
+  }
+  @media (max-width: 1400px) {
+    max-width: 1380px;
+  }
+  @media (max-width: 1900px) {
+    max-width: 1440px;
+  }
+}
