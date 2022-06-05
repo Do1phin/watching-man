@@ -1,1 +1,0 @@
-export { GET_ALL_ISSUES } from './issues';

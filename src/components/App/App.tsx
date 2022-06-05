@@ -4,6 +4,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from "@ap
 
 import { MainLayout } from '../../layouts/';
 import { Home, About } from '../../pages/';
+import { Map } from '../Map/Map';
 
 import '../../../public/styles/normalize.scss';
 import '../../../public/styles/base.scss';
@@ -30,6 +31,7 @@ export const App: FC = (): JSX.Element => {
                 <Route index element={<Home />} />
                 <Route path='/about' element={<About />} />
                 <Route path='/issues' element={<IssuesList />} />
+                <Route path='/map' element={<Map />} />
               </Route>
             </Routes>
           </BrowserRouter>

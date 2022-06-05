@@ -1,0 +1,8 @@
+@import 'https://unpkg.com/leaflet@1.8.0/dist/leaflet.css';
+@import 'https://unpkg.com/react-leaflet-markercluster/dist/styles.min.css';
+
+.leaflet-container {
+  margin: 20px auto 20px auto;
+  width: 1200px;
+  height: 90vh;
+}
