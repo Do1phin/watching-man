@@ -7,4 +7,4 @@ export const LoaderFiles: webpack.RuleSetUseItem = {
     outputPath: 'images',
     emitFile: true,
   },
-}
+};

@@ -10,7 +10,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "lint": "eslint --ext .ts,.tsx src/**/",
-    "lint:fix": "eslint '../src/**/*.ts' --fix"
+    "lint:fix": "eslint '../src/**/*.ts' --fix",
+    "postcss:fix": "postcss ./src/**/*.scss --syntax postcss-scss --use css-declaration-sorter --replace"
   },
   "repository": {
     "type": "git",
@@ -58,6 +59,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react-app": "^10.0.1",
     "core-js": "^3.22.7",
+    "css-declaration-sorter": "^6.2.2",
     "css-loader": "^6.7.1",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
@@ -71,6 +73,11 @@
     "html-webpack-plugin": "^5.5.0",
     "lodash": "^4.17.21",
     "path": "^0.12.7",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0",
+    "postcss-loader": "^7.0.0",
+    "postcss-preset-env": "^7.7.1",
+    "postcss-scss": "^4.0.4",
     "prettier": "^2.6.2",
     "react-docgen-typescript": "^2.2.2",
     "sass": "^1.52.1",
