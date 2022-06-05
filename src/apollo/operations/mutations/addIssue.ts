@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
-const GET_ALL_ISSUES = gql`
-  query allIssues {
-    allIssues {
+const ADD_ISSUE = gql`
+  mutation addIssue($data: IssueInput!) {
+    addIssue(data: $data) {
       id
       title
       description
@@ -16,4 +16,4 @@ const GET_ALL_ISSUES = gql`
   }
 `;
 
-export { GET_ALL_ISSUES };
+export { ADD_ISSUE };

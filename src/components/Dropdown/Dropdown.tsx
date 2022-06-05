@@ -7,6 +7,8 @@ import './Dropdown.style.scss';
 import ua from '../../../public/images/ua.png';
 import ru from '../../../public/images/ru.png';
 
+import {locales} from '../../../public/locales/locales.ts';
+
 interface IItem {
   name: string;
   value: string;
@@ -26,7 +28,9 @@ const items = [
   },
 ];
 
-export const Dropdown = (): JSX.Element => {
+export const Dropdown = (locales): JSX.Element => {
+  console.log('loca', locales);
+  
   const { i18n } = useTranslation();
   const dropdownRef = useRef(null);
   const [isShow, setIsShow] = useState<boolean>(false);

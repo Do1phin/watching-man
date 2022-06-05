@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Input } from './Input';
-import { LoginIcon } from '../../../elements/';
+import { MyIcon } from './Icon';
 
 const Template: ComponentStory<typeof Input> = (args) => {
   return <Input {...args} />;
@@ -11,10 +11,10 @@ const Template: ComponentStory<typeof Input> = (args) => {
 const TemplateWithIcon: ComponentStory<typeof Input> = (args) => {
   return (
     <>
-      <Input icon={<LoginIcon />} iconPosition='start' {...args} />
+      <Input icon={<MyIcon />} iconPosition='start' {...args} />
       <br />
       <br />
-      <Input icon={<LoginIcon />} iconPosition='end' {...args} />
+      <Input icon={<MyIcon />} iconPosition='end' {...args} />
     </>
   );
 };

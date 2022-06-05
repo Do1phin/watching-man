@@ -20,6 +20,11 @@ export enum Status {
   ERROR = 'error',
 }
 
+const a = {
+  b: 1,
+  a: 0,
+};
+
 interface IProps {
   value?: string;
   type?: Type;
@@ -28,8 +33,8 @@ interface IProps {
   status?: Status;
   icon?: ReactNode;
   iconPosition?: IconPosition;
-  onChange: Function;
-  onClick?: Function;
+  onChange?: () => void;
+  onClick?: () => void;
 }
 
 export const Input = (props: IProps) => {

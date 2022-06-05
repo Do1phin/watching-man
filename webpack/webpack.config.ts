@@ -1,6 +1,7 @@
+import path from 'path';
+
 import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
 import type { Configuration } from 'webpack';
-const path = require('path');
 
 import { ruleBabel } from './rules/ruleBabel';
 import { ruleHtml } from './rules/ruleHtml';
@@ -24,6 +25,20 @@ const config: Configuration | DevServerConfiguration = {
   },
   devServer: {
     historyApiFallback: true,
+    host: 'localhost',
+    port: 9000,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': '*',
+      'Access-Control-Allow-Methods': '*',
+  },
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        // pathRewrite: {"^/api/graphql" : ""},
+        secure: false,
+      }
+    }
   },
   devtool: 'inline-source-map',
   optimization: {

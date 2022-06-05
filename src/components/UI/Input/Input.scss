@@ -5,11 +5,11 @@
   display: inline-block;
 
   [status='success'] {
-    border: 3px solid $color-status-success;
+    border: 2px solid $color-status-success;
   }
 
   [status='error'] {
-    border: 3px solid $color-status-error;
+    border: 2px solid $color-status-error;
   }
 
   .input {
@@ -30,7 +30,7 @@
   }
 
   input {
-    border: 3px solid $color-status-none;
+    border: 1px solid $color-status-none;
     border-radius: 5px;
     padding: 4px 5px 4px 5px;
     overflow: hidden;

@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "node": true
   },
   "extends": [
     "plugin:@typescript-eslint/recommended",
@@ -62,14 +63,8 @@
         "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
         "allowSeparatedGroups": true
       }
-    ]
-//    "sort-keys": [
-//      "error",
-//      "asc",
-//      {
-//        "caseSensative": false,
-//        "natural": true
-//      }
-//    ]
+    ],
+    "sort-keys": ["error", "asc", { "caseSensitive": true, "natural": false, "minKeys": 2 }],
+    "sort-vars": ["error", { "ignoreCase": true }]
   }
 }
