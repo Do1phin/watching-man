@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { Dropdown } from '../index';
+import { FlagDropdown } from '../FlagDropdown/FlagDropdown';
 
 import './Header.styles.scss';
 
@@ -48,7 +48,7 @@ export const Header: FC = (): JSX.Element => {
             <div className='header__cabinet-wrapper cabinet'>[mock auth block]</div>
 
             <div className='header__lang-dropdown-wrapper'>
-              <Dropdown />
+              <FlagDropdown />
             </div>
           </div>
         </div>
