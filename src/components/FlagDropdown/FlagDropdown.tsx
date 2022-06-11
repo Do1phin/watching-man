@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import OutsideClickHandler from 'react-outside-click-handler';
 import _ from 'lodash';
 
-import './Dropdown.style.scss';
+import './FlagDropdown.style.scss';
 
 import ua from '../../../public/images/ua.png';
 import ru from '../../../public/images/ru.png';
@@ -29,8 +29,7 @@ const items = [
   },
 ];
 
-const Dropdown = (): JSX.Element => {
-  console.log('locales', locales());
+const FlagDropdown = (): JSX.Element => {
   const { i18n } = useTranslation();
   const dropdownRef = useRef(null);
   const [isShow, setIsShow] = useState<boolean>(false);
@@ -106,4 +105,4 @@ const Dropdown = (): JSX.Element => {
   );
 };
 
-export { Dropdown };
+export { FlagDropdown };
