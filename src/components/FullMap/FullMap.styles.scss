@@ -1,0 +1,18 @@
+.full-map__container {
+  height: 80vh;
+  margin: 20px auto 20px auto;
+  width: 1200px;
+  position: relative;
+
+  .leaflet-container {
+    height: 100%;
+  }
+}
+
+.my-position-button {
+  position: absolute;
+  z-index: 1000;
+  right: 10px;
+  top: 10px;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJGdWxsTWFwLnN0eWxlcy5zY3NzIn0= */
