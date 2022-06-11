@@ -3,7 +3,7 @@ import { useLazyQuery } from '@apollo/client';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import _ from 'lodash';
 
-import { MarkerWrapper } from '../Marker/MarkerWrapper';
+import { MarkerWrapper } from '../MarkerWrapper/MarkerWrapper';
 import './Map.styles.scss';
 
 import { useMyPosition } from './hooks/useMyPosition';
