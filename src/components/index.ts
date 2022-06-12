@@ -1,3 +1,3 @@
 export { App } from './App/App';
-export { Dropdown } from './Dropdown/Dropdown';
+export { FlagDropdown } from './FlagDropdown/FlagDropdown';
 export { Header } from './Header/Header';
