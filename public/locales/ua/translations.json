@@ -3,7 +3,8 @@
     "about": "Про проект",
     "organizations": "Організації",
     "map": "Мапа",
-    "issues": "Звернення"
+    "issues": "Звернення",
+    "set-city": "Вибрати місто..."
   },
   "about": {
     "supervision": {

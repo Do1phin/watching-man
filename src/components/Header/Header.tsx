@@ -2,9 +2,10 @@ import React, { FC } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { FlagDropdown } from '../FlagDropdown/FlagDropdown';
-
 import './Header.styles.scss';
+
+import { SetCity } from '../SetCity/SetCity';
+import { FlagDropdown } from '../FlagDropdown/FlagDropdown';
 
 import siteLogo from '../../../public/images/site-logo-transp.png';
 
@@ -43,7 +44,9 @@ export const Header: FC = (): JSX.Element => {
                 </li>
               </ul>
             </nav>
-            <div className='header__map-wrapper map'>[mock map block]</div>
+            <div className='header__map-wrapper map'>
+              <SetCity />
+            </div>
 
             <div className='header__cabinet-wrapper cabinet'>[mock auth block]</div>
 
