@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import './Issue.styles.scss';
 
 const Issue = (props) => {
-  const { title, city, description, id } = props;
+  const { title, city, description } = props;
+
+  const id = '629a1619ef811a385fcd83c6';
 
   return (
     <>
@@ -15,13 +17,13 @@ const Issue = (props) => {
 
         <div className='item__body'>
           <picture className='item__photo'>
-            <source srcSet='/images/issues/31337/01.webp' type='image/webp'></source>
-            <img src='/images/issues/31337/01.jpeg' alt='Фото-факт проблемы'></img>
+            <source srcSet={`/images/issues/${id}/01.webp`} type='image/webp'></source>
+            <img src={`/images/issues/${id}/01.jpeg`} alt='Фото к обращению'></img>
           </picture>
         </div>
 
         <div className='item__footer'>
-          <Link to={id}>
+          <Link to={id} state={props}>
             <h3 className='item__title'>{title}</h3>
             <p className='item__description'>{description}</p>
           </Link>

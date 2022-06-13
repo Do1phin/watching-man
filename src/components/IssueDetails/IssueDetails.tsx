@@ -1,10 +1,6 @@
-import { logDOM } from '@storybook/testing-library';
-import React, { FC, useEffect, useState } from 'react';
-import { useMap } from 'react-leaflet';
+import React, { FC, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import L from 'leaflet';
-import LCG from 'leaflet-control-geocoder';
 
 import './IssueDetails.styles.scss';
 
@@ -19,10 +15,6 @@ const IssueDetails: FC = (): JSX.Element => {
   const location = useLocation();
   const data = location.state;
 
-  // const geocoder = L.Control.geocoder({
-  //   defaultMarkGeocode: false,
-  // });
-
   const mapState = {
     attributionControl: false,
     center: [data.point.lat, data.point.lon],
@@ -34,32 +26,6 @@ const IssueDetails: FC = (): JSX.Element => {
   };
 
   const markers = createMarkerHelper([data]);
-
-  const fffff = () => {
-    if (map) {
-      console.log('111111');
-      // geocoder.reverse([50,30], () => console.log('ffff cb'))
-    }
-  };
-
-  // var geocoder = L.Control.geocoder({
-  //   defaultMarkGeocode: false
-  // })
-  //   .on('markgeocode', function(e) {
-  //     var bbox = e.geocode.bbox;
-  //     var poly = L.polygon([
-  //       bbox.getSouthEast(),
-  //       bbox.getNorthEast(),
-  //       bbox.getNorthWest(),
-  //       bbox.getSouthWest()
-  //     ]).addTo(map);
-  //     map.fitBounds(poly.getBounds());
-  //   })
-  //   .addTo(map);
-
-  useEffect(() => {
-    fffff();
-  }, [map]);
 
   return (
     <section className='issue-details'>
@@ -76,7 +42,6 @@ const IssueDetails: FC = (): JSX.Element => {
             </p>
 
             <hr />
-            <button onClick={fffff}>adsfasdfasdf</button>
 
             {/*<p className='info__place'>*/}
             {/*  {t('details.place')}*/}
@@ -90,7 +55,7 @@ const IssueDetails: FC = (): JSX.Element => {
               </span>
             </p>
 
-            <Map initialMapState={mapState} markers={markers} whenReadyCb={setMap} />
+            <Map initialMapState={mapState} markers={markers} noPopupMarker whenReadyCb={setMap} />
 
             <p className='info__status'>{data.status}</p>
             <p className='info__title'>
@@ -103,7 +68,7 @@ const IssueDetails: FC = (): JSX.Element => {
             </p>
 
             <p className='info__timestamp'>
-              {t('details.timestamp')}
+              {t('details.create-timestamp')}
               <span>{data.createdAt}</span>
             </p>
           </div>
