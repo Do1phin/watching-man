@@ -5,5 +5,13 @@
   height: 90vh;
   margin: 20px auto 20px auto;
   width: 1200px;
+  position: relative;
+}
+
+.my-position-button {
+  z-index: 10000;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk1hcC5zdHlsZXMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSwwREFBMEQ7QUFDMUQsMkVBQTJFOztBQUUzRTtFQUNFLFlBQVk7RUFDWiwyQkFBMkI7RUFDM0IsYUFBYTtBQUNmIiwiZmlsZSI6Ik1hcC5zdHlsZXMuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJ2h0dHBzOi8vdW5wa2cuY29tL2xlYWZsZXRAMS44LjAvZGlzdC9sZWFmbGV0LmNzcyc7XG5AaW1wb3J0ICdodHRwczovL3VucGtnLmNvbS9yZWFjdC1sZWFmbGV0LW1hcmtlcmNsdXN0ZXIvZGlzdC9zdHlsZXMubWluLmNzcyc7XG5cbi5sZWFmbGV0LWNvbnRhaW5lciB7XG4gIGhlaWdodDogOTB2aDtcbiAgbWFyZ2luOiAyMHB4IGF1dG8gMjBweCBhdXRvO1xuICB3aWR0aDogMTIwMHB4O1xufSJdfQ== */
