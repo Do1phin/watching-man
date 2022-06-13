@@ -1,4 +1,3 @@
-import { logDOM } from '@storybook/testing-library';
 import { useEffect, useState } from 'react';
 
 const useMyPermission = (permissionName) => {
@@ -7,8 +6,7 @@ const useMyPermission = (permissionName) => {
   });
 
   const checkBrowserName = () => {
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    return isSafari;
+    return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
   };
 
   const mySafariPermission = () => {
@@ -40,6 +38,7 @@ const useMyPermission = (permissionName) => {
   }, []);
 
   return {
+    checkBrowserName,
     permission,
   };
 };
