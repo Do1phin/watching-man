@@ -3,7 +3,8 @@
     "about": "О проекте",
     "organizations": "Организации",
     "map": "Карта",
-    "issues": "Обращения"
+    "issues": "Обращения",
+    "set-city": "Выбрать город..."
   },
   "about": {
     "supervision": {
