@@ -19,7 +19,7 @@ const IssuesList = () => {
   const [getAllIssues, { loading, error, data }] = useLazyQuery(GET_ALL_ISSUES);
 
   useEffect(() => {
-    getAllIssues().then((resp) => console.log('res', resp));
+    getAllIssues();
   }, [data]);
 
   return (

@@ -21,6 +21,9 @@
   },
   "details": {
     "issue-id": "id обращения: ",
-    "title": "Тема обращения: "
+    "title": "Тема обращения: ",
+    "description": "Описание: ",
+    "coordinates": "Координаты: ",
+    "create-timestamp": "Дата обращения: "
   }
 }

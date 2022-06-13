@@ -16,13 +16,13 @@ const slidesData = [
   },
   {
     id: 2,
-    type: 'video',
-    url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+    type: 'img',
+    url: 'https://swiperjs.com/demos/images/nature-2.jpg',
   },
   {
     id: 3,
     type: 'img',
-    url: 'https://swiperjs.com/demos/images/nature-2.jpg',
+    url: 'https://swiperjs.com/demos/images/nature-3.jpg',
   },
   {
     id: 4,
@@ -31,11 +31,6 @@ const slidesData = [
   },
   {
     id: 5,
-    type: 'img',
-    url: 'https://swiperjs.com/demos/images/nature-3.jpg',
-  },
-  {
-    id: 6,
     type: 'img',
     url: 'https://swiperjs.com/demos/images/nature-4.jpg',
   },
@@ -56,14 +51,12 @@ const Carousel: FC = (props): JSX.Element => {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}>
+        scrollbar={{ draggable: true }}>
         {slidesData.map((slide) => (
           <SwiperSlide key={slide.id}>
             <picture className='item__photo'>
               <source srcSet={`/images/issues/${id}/0${slide.id}.webp`} type='image/webp'></source>
-              <img src={`/images/issues/${id}/0${slide.id}.jpeg`} alt='Фото-факт обращения'></img>
+              <img src={`/images/issues/${id}/0${slide.id}.jpeg`} alt='Фото к обращению'></img>
             </picture>
           </SwiperSlide>
         ))}
@@ -81,7 +74,7 @@ const Carousel: FC = (props): JSX.Element => {
           <SwiperSlide key={slide.id}>
             <picture className='item__photo'>
               <source srcSet={`/images/issues/${id}/0${slide.id}.webp`} type='image/webp'></source>
-              <img src={`/images/issues/${id}/0${slide.id}.jpeg`} alt='Фото-факт обращения'></img>
+              <img src={`/images/issues/${id}/0${slide.id}.jpeg`} alt='Превью обращения'></img>
             </picture>
           </SwiperSlide>
         ))}

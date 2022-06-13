@@ -21,6 +21,9 @@
   },
   "details": {
     "issue-id": "id звернення: ",
-    "title": "Тема звернення: "
+    "title": "Тема звернення: ",
+    "description": "Опис: ",
+    "coordinates": "Координати: ",
+    "create-timestamp": "Дата звернення: "
   }
 }

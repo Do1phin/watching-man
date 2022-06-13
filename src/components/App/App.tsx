@@ -9,6 +9,7 @@ import '../../../public/styles/base.scss';
 import { MainLayout } from '../../layouts/';
 import { About, Home } from '../../pages/';
 import { IssuesList } from '../IssuesList/IssuesList';
+import { IssueDetails } from '../IssueDetails/IssueDetails';
 import { FullMap } from '../FullMap/FullMap';
 
 export const client = new ApolloClient({
@@ -29,6 +30,7 @@ export const App: FC = (): JSX.Element => {
                   <Route index element={<Home />} />
                   <Route path='/about' element={<About />} />
                   <Route path='/issues' element={<IssuesList />} />
+                  <Route path='/issues/:id' element={<IssueDetails />} />
                   <Route path='/map' element={<FullMap />} />
                 </Route>
               </Routes>
