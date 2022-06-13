@@ -25,5 +25,9 @@
     "description": "Описание: ",
     "coordinates": "Координаты: ",
     "create-timestamp": "Дата обращения: "
+  },
+  "set-city": {
+    "modal-error-permission": "К сожалению вы не предоставили доступ к геолокации браузера \uD83D\uDE25",
+    "title": "Выберите населённый пункт: "
   }
 }
