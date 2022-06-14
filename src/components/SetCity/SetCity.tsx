@@ -1,30 +1,29 @@
 import { SetCityModal } from './SetCityModal';
-import React, { FC, useRef, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useMyPosition } from '../Map/hooks/useMyPosition';
 import { useMyPermission } from './hooks/useMyPermission';
 
 import './SetCity.styles.scss';
 
 const SetCity: FC = (): JSX.Element => {
   const { t } = useTranslation();
-  const btnRef = useRef();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const { permission } = useMyPermission('geolocation');
+  const [locality, setLocality] = useState<string>('');
 
   const getMyAddress = () => {
-    checkMyLocationPermission();
+    return checkMyLocationPermission();
   };
 
   const checkMyLocationPermission = () => {
     if (permission.state === 'granted') {
-      setIsOpen(true);
+      return setIsOpen(true);
     }
   };
 
   return (
     <>
-      <SetCityModal isOpen={isOpen} setIsOpen={setIsOpen} />
+      <SetCityModal isOpen={isOpen} setIsOpen={setIsOpen} setLocality={setLocality} />
       <div className='set-city' onClick={getMyAddress}>
         <img
           src='/images/gps-icon.png'
@@ -33,9 +32,7 @@ const SetCity: FC = (): JSX.Element => {
           height='20px'
           className='set-city__icon'
         />
-        <p className='set-city__name' ref={btnRef}>
-          {t('header.set-city')}
-        </p>
+        <p className='set-city__name'>{locality ? locality : t('header.set-city')}</p>
       </div>
     </>
   );

@@ -8,15 +8,15 @@ import * as translationsUA from './public/locales/ua/translations.json';
 import * as translationsRU from './public/locales/ru/translations.json';
 
 const resources: object = {
-  ua: {
-    translations: translationsUA,
-  },
   ru: {
     translations: translationsRU,
   },
+  ua: {
+    translations: translationsUA,
+  },
 };
 
-const fallBackLanguage: string = 'ua';
+const fallBackLanguage = 'ua';
 
 i18next
   .use(ChainedBackend)
@@ -25,19 +25,19 @@ i18next
   .use(initReactI18next)
   .init(
     {
-      compatibilityJSON: 'v3',
-      fallbackLng: fallBackLanguage,
-      supportedLngs: ['ua', 'ru'],
-      lowerCaseLng: true,
       cleanCode: true,
+      compatibilityJSON: 'v3',
       debug: true,
-      detection: {},
-      ns: ['translations'],
       defaultNS: 'translations',
+      detection: {},
+      fallbackLng: fallBackLanguage,
       keySeparator: '.',
+      lowerCaseLng: true,
+      ns: ['translations'],
       resources: {
         ...resources,
       },
+      supportedLngs: ['ua', 'ru'],
       // backend: {
       // backends: [
       //   BrowserLanguageDetector,
