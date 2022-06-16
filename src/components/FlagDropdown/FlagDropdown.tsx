@@ -1,4 +1,5 @@
-import React, { FC, useState, useRef, useEffect } from 'react';
+import cx from 'classnames';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import OutsideClickHandler from 'react-outside-click-handler';
 import _ from 'lodash';
@@ -17,7 +18,7 @@ interface ILocale {
 
 const FlagDropdown: FC = (): JSX.Element => {
   const { i18n } = useTranslation();
-  const dropdownRef = useRef(null);
+  const dropdownRef = useRef<HTMLAnchorElement>(null);
   const [isShow, setIsShow] = useState<boolean>(false);
   const [lang, setLang] = useState<ILocale>(locales[0]);
 
@@ -68,7 +69,7 @@ const FlagDropdown: FC = (): JSX.Element => {
             {FlagDropdownItem(lang)}
             <span className='dropdown__arrow'></span>
           </div>
-          <div className={`dropdown__wrapper ${isShow ? 'show' : ''}`}>{listItems(locales)}</div>
+          <div className={cx('dropdown__wrapper', { show: isShow })}>{listItems(locales)}</div>
         </OutsideClickHandler>
       </div>
     </>
