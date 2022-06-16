@@ -1,6 +1,7 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import cx from 'classnames';
 
 import './Header.styles.scss';
 
@@ -11,6 +12,11 @@ import siteLogo from '../../../public/images/site-logo-transp.png';
 
 export const Header: FC = (): JSX.Element => {
   const { t } = useTranslation();
+  const [isOpen, setOpen] = useState<boolean>(false);
+
+  const toggleOpenBurger = () => {
+    return setOpen(!isOpen);
+  };
 
   return (
     <>
@@ -28,7 +34,16 @@ export const Header: FC = (): JSX.Element => {
               />
             </Link>
 
-            <nav className='header__nav'>
+            <div className={cx('header__burger burger', { open: isOpen })}>
+              <div className='burger__background'></div>
+              <div className='burger-icon__wrapper' onClick={toggleOpenBurger}>
+                <span className='burger-icon__bar'></span>
+                <span className='burger-icon__bar'></span>
+                <span className='burger-icon__bar'></span>
+              </div>
+            </div>
+
+            <nav className={cx('header__nav', { open: isOpen })} onClick={toggleOpenBurger}>
               <ul className='header__list'>
                 <li className='header__item'>
                   <NavLink to='/about'>{t('header.about')}</NavLink>
