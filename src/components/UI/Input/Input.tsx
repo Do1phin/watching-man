@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import cx from 'classnames';
 
-import './Input.scss';
+import './Input.styles.scss';
 
 export enum Type {
   TEXT = 'text',
@@ -28,18 +28,33 @@ const a = {
 interface IProps {
   value?: string;
   type?: Type;
+  maxLength?: number;
   disabled?: boolean;
   placeholder?: string;
+  textPosition?: string;
   status?: Status;
   icon?: ReactNode;
   iconPosition?: IconPosition;
   onChange?: () => void;
   onClick?: () => void;
+  ref?: any;
 }
 
 export const Input = (props: IProps) => {
-  const { value, type, disabled, icon, status, placeholder, onChange, onClick, iconPosition } =
-    props;
+  const {
+    disabled,
+    icon,
+    status,
+    placeholder,
+    iconPosition,
+    onChange,
+    onClick,
+    textPosition,
+    type,
+    value,
+    maxLength,
+    ref,
+  } = props;
 
   return (
     <>
@@ -52,9 +67,12 @@ export const Input = (props: IProps) => {
           autoComplete='off'
           disabled={disabled}
           placeholder={placeholder}
+          style={{ textAlign: textPosition }}
+          maxLength={maxLength}
           onClick={onClick}
           value={value}
           onChange={onChange}
+          ref={ref}
         />
       </div>
     </>

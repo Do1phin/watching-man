@@ -20,104 +20,116 @@ const TemplateWithIcon: ComponentStory<typeof Input> = (args) => {
 };
 
 export default {
-  title: 'FORMS/Input',
-  component: Input,
-  parameters: {
-    controls: {
-      sort: 'alpha',
-      expanded: true,
-    },
-  },
   argTypes: {
-    value: {
-      description: 'Содержимое текстового поля',
+    disabled: {
       control: {
-        type: 'text',
+        type: 'boolean',
       },
+      description: 'Включен или отключен элемент',
+      options: [true, false],
       table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: '' },
-      },
-    },
-    type: {
-      description: 'Тип отображения данных текстового поля',
-      options: ['text', 'password', 'number'],
-      control: {
-        type: 'radio',
-      },
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: 'text' },
+        defaultValue: { summary: false },
+        type: { summary: 'boolean' },
       },
     },
     icon: {
       description: 'React-элемент, содержащий иконку',
     },
-    disabled: {
-      description: 'Включен или отключен элемент',
-      options: [true, false],
-      control: {
-        type: 'boolean',
-      },
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false },
-      },
-    },
-    status: {
-      description: 'Показывает правильные ли введены данные',
-      options: ['none', 'success', 'error'],
-      control: {
-        type: 'radio',
-        defaultValue: 'success',
-      },
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: 'none' },
-      },
-    },
-    placeholder: {
-      description: 'Текст отображаемый как placeholder',
-      control: {
-        type: 'text',
-      },
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: '' },
-      },
-    },
     iconPosition: {
-      description: 'Расположение иконки, в начале или в конце элемента',
-      options: ['start', 'end'],
       control: {
         type: 'inline-radio',
       },
+      description: 'Расположение иконки, в начале или в конце элемента',
+      options: ['start', 'end'],
       table: {
-        type: { summary: 'string' },
         defaultValue: { summary: 'start' },
+        type: { summary: 'string' },
       },
     },
     onChange: {
       description: 'Функция вызываемая при изменении содержимого поля',
       table: {
-        type: { summary: 'Function' },
         defaultValue: { summary: '() => {}' },
+        type: { summary: 'Function' },
       },
     },
     onClick: {
       description: 'Функция вызываемая при клике на элемент',
       table: {
-        type: { summary: 'Function' },
         defaultValue: { summary: '() => {}' },
+        type: { summary: 'Function' },
+      },
+    },
+    placeholder: {
+      control: {
+        type: 'text',
+      },
+      description: 'Текст отображаемый как placeholder',
+      table: {
+        defaultValue: { summary: '' },
+        type: { summary: 'string' },
+      },
+    },
+    status: {
+      control: {
+        defaultValue: 'success',
+        type: 'radio',
+      },
+      description: 'Показывает правильные ли введены данные',
+      options: ['none', 'success', 'error'],
+      table: {
+        defaultValue: { summary: 'none' },
+        type: { summary: 'string' },
+      },
+    },
+    textPosition: {
+      control: {
+        type: 'inline-radio',
+      },
+      description: 'Выравнивание текста в инпуте',
+      options: ['left', 'center', 'right'],
+      table: {
+        defaultValue: { summary: 'left' },
+        type: { summary: 'string' },
+      },
+    },
+    type: {
+      control: {
+        type: 'radio',
+      },
+      description: 'Тип отображения данных текстового поля',
+      options: ['text', 'password', 'number'],
+      table: {
+        defaultValue: { summary: 'text' },
+        type: { summary: 'string' },
+      },
+    },
+    value: {
+      control: {
+        type: 'text',
+      },
+      description: 'Содержимое текстового поля',
+      table: {
+        defaultValue: { summary: '' },
+        type: { summary: 'string' },
       },
     },
   },
+  component: Input,
+  parameters: {
+    controls: {
+      expanded: true,
+      sort: 'alpha',
+    },
+  },
+  title: 'FORMS/Input',
 } as ComponentMeta<typeof Input>;
 
 const props = {
-  status: 'none',
-  type: 'text',
   placeholder: 'Input your text ...',
+  status: 'none',
+  textPosition: 'left',
+  type: 'text',
 };
 
 export const Simple = Template.bind({});
