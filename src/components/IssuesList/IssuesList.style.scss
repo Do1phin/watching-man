@@ -3,15 +3,46 @@
 .issue {
   background: $color-bg-gray-light;
   margin-top: 20px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin: 0 auto;
+
+    & > a {
+      font-size: 18px;
+      background-color: #fff;
+      border-color: 1px solid $color-bg-gray;
+    }
+  }
+  .empty-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+
+    &__msg {
+      margin-bottom: 20px;
+    }
+    &__link {
+      width: fit-content;
+    }
+  }
+}
+.empty-list__link {
+  display: inline-block;
+  margin: 0 auto;
 }
 
-.issue__list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  margin-right: 20px;
+.hook {
+  &-loading__msg,
+  &-error__msg {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+  }
 }
-
 body {
   background: $color-bg-gray-light;
 }

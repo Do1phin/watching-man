@@ -1,13 +1,16 @@
-import path from 'path';
+import * as path from 'path';
 
 import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
 import type { Configuration } from 'webpack';
 
 import { ruleBabel } from './rules/ruleBabel';
 import { ruleHtml } from './rules/ruleHtml';
-import { pluginHtml } from './plugins/pluginHtml';
 import { rulePic } from './rules/rulePic';
 import { ruleCss } from './rules/ruleCss';
+import { pluginHtml } from './plugins/pluginHtml';
+import { pluginTerser } from './plugins/pluginTerser';
+import { pluginMiniCssExtract } from './plugins/pluginMiniCssExtract';
+import { pluginBundleAnalyzer } from './plugins/pluginBundleAnalyzer';
 
 const config: Configuration | DevServerConfiguration = {
   devServer: {
@@ -31,20 +34,25 @@ const config: Configuration | DevServerConfiguration = {
   entry: {
     index: './src/index.tsx',
   },
+  module: {
+    rules: [ruleBabel, ruleHtml, rulePic, ruleCss],
+  },
   optimization: {
+    minimize: true,
+    minimizer: [pluginTerser],
     moduleIds: 'deterministic',
     runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
         vendor: {
           chunks: 'all',
-          name: 'vendors',
-          test: /node_modules/,
           maxAsyncRequests: 5,
           maxInitialRequests: 3,
           maxSize: 250000,
           minChunks: 1,
           minSize: 30000,
+          name: 'vendors',
+          test: /node_modules/,
         },
       },
     },
@@ -59,9 +67,7 @@ const config: Configuration | DevServerConfiguration = {
   performance: {
     hints: false,
   },
-  module: {
-    rules: [ruleBabel, ruleHtml, rulePic, ruleCss],
-  },
+  plugins: [pluginHtml, pluginMiniCssExtract, pluginBundleAnalyzer],
   resolve: {
     alias: {
       components: path.resolve(__dirname, './src/components/'),
@@ -73,7 +79,6 @@ const config: Configuration | DevServerConfiguration = {
     },
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
-  plugins: [pluginHtml],
 };
 
 export default config;
