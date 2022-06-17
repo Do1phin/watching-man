@@ -29,11 +29,6 @@ const slidesData = [
     type: 'img',
     url: 'https://swiperjs.com/demos/images/nature-3.jpg',
   },
-  {
-    id: 5,
-    type: 'img',
-    url: 'https://swiperjs.com/demos/images/nature-4.jpg',
-  },
 ];
 
 const Carousel: FC = (props): JSX.Element => {
