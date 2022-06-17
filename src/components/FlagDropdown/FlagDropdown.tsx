@@ -2,7 +2,7 @@ import cx from 'classnames';
 import React, { FC, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import OutsideClickHandler from 'react-outside-click-handler';
-import _ from 'lodash';
+import { map } from 'lodash';
 
 import './FlagDropdown.style.scss';
 
@@ -38,7 +38,7 @@ const FlagDropdown: FC = (): JSX.Element => {
   const listItems = (locales: ILocale[]): JSX.Element => {
     return (
       <ul className='dropdown__list'>
-        {_.map(locales, (item: ILocale) => (
+        {map(locales, (item: ILocale) => (
           <li className='dropdown__item' key={item.value} onClick={() => changeLang(item)}>
             {FlagDropdownItem(item)}
           </li>

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Marker, Popup } from 'react-leaflet';
-import _ from 'lodash';
 import { useTranslation } from 'react-i18next';
+import { map } from 'lodash';
 
 import { markerStyleHelper } from '../../helpers/markerStyleHelper';
 
@@ -11,7 +11,7 @@ const MarkerWrapper: FC = (props): JSX.Element => {
 
   return (
     markers &&
-    _.map(markers, (item) => (
+    map(markers, (item) => (
       <>
         <Marker
           key={`marker-${item.id}`}
