@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { useMyPosition } from '../Map/hooks/useMyPosition';
-import _ from 'lodash';
+import { concat } from 'lodash';
 
 import './FullMap.styles.scss';
 
@@ -44,7 +44,7 @@ const FullMap: FC = (): JSX.Element => {
         status: 'MY',
       };
 
-      const allMarkers = _.concat(markers, myMarker);
+      const allMarkers = concat(markers, myMarker);
       setMarkers(allMarkers);
       setViewToCoords();
     }

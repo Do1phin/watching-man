@@ -1,8 +1,8 @@
-import _ from "lodash";
-import { useState } from "react";
+import { concat } from 'lodash';
+import { useState } from 'react';
 
 const useMyMarker = (issues) => {
-  // const allIssues = _.concat(issues, {
+  // const allIssues = concat(issues, {
   //   id: 'my',
   //   point: { lat: coords.lat, lon: coords.lon },
   // });

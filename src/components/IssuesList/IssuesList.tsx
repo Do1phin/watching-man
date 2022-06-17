@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import _ from 'lodash';
+import { map } from 'lodash';
 
 import { Issue } from '../Issue/Issue';
 
@@ -53,7 +53,7 @@ const IssuesList = () => {
           )}
           <div className='issue__list'>
             {data &&
-              _.map(data.allIssues, (issue: Issue) => {
+              map(data.allIssues, (issue: Issue) => {
                 return <Issue {...issue} />;
               })}
           </div>
