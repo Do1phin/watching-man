@@ -2,7 +2,7 @@ name: '✅ Checking with linters'
 
 on:
   push:
-    branches: [dev]
+    branches: [dev, master]
   pull_request:
     branches: [dev, master]
 
