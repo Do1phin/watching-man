@@ -32,8 +32,8 @@ const slidesData = [
 ];
 
 const Carousel: FC = (props): JSX.Element => {
-  const { id } = props;
-
+  // const { id } = props;
+  const id = '629a1619ef811a385fcd83c6';
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
