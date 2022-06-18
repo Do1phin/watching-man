@@ -6,6 +6,6 @@ export const pluginBundleAnalyzer: webpack.DefinePlugin = new BundleAnalyzerPlug
   analyzerMode: 'server',
   analyzerPort: 8888,
   defaultSizes: 'parsed',
-  openAnalyzer: true,
+  openAnalyzer: false,
   reportFilename: 'report.html',
 });
