@@ -1,4 +1,8 @@
 .about {
+  &__container {
+    margin: 0 auto;
+    width: 1230px;
+  }
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -11,7 +15,6 @@
       font-size: 20px;
       padding: 0 5px;
     }
-
     &__text {
       font-size: 16px;
       padding: 10px 5px 0 5px;
