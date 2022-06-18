@@ -1,0 +1,31 @@
+name: '✅ Checking with linters'
+
+on:
+  push:
+    branches: [dev, master]
+  pull_request:
+    branches: [dev, master]
+
+jobs:
+  first-test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [16, 18]
+    steps:
+      - uses: actions/checkout@v3
+      - name: 🚀 Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: 🧩 Install modules
+        run: npm install
+      - name: 🗜 Build project
+        run: npm run build
+      - name: 📕 Build storybook
+        run: npm run build:storybook
+      - name: 🛠 Lint code
+        run: npm run lint:check
+      - name: 🎀 Pretty code
+        run: npm run postcss:check

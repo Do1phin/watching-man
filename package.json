@@ -5,13 +5,14 @@
   "main": "src/index.tsx",
   "scripts": {
     "build": "webpack --mode production --config ./webpack/webpack.config.ts",
+    "build:storybook": "build-storybook",
     "dev:watch": "webpack --mode development --config ./webpack/webpack.config.ts --watch",
     "dev:serve": "webpack serve --mode production --config ./webpack/webpack.config.ts",
     "analyz": "webpack --profile --json > stats.json",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "lint": "eslint --ext .ts,.tsx src/**/",
+    "lint:check": "eslint --ext .ts,.tsx src/**/",
     "lint:fix": "eslint '../src/**/*.ts' --fix",
+    "postcss:check": "postcss ./src/**/*.scss --syntax postcss-scss --use css-declaration-sorter",
     "postcss:fix": "postcss ./src/**/*.scss --syntax postcss-scss --use css-declaration-sorter --replace"
   },
   "repository": {
