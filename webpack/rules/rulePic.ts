@@ -4,6 +4,6 @@ export const rulePic: webpack.RuleSetRule = {
   generator: {
     filename: './images/[name][query][ext]',
   },
-  test: /\.(jpg|png|svg|jpeg)$/i,
+  test: /\.(png|svg|jpg|jpeg|gif)$/i,
   type: 'asset/resource',
 };
