@@ -8,7 +8,7 @@ import './Header.styles.scss';
 import { SetCity } from '../SetCity/SetCity';
 import { FlagDropdown } from '../FlagDropdown/FlagDropdown';
 
-import siteLogo from '../../../public/images/site-logo-transp.png';
+import siteLogoImg from '/public/images/site-logo-transp.png';
 
 export const Header: FC = (): JSX.Element => {
   const { t } = useTranslation();
@@ -25,7 +25,7 @@ export const Header: FC = (): JSX.Element => {
           <div className='header__raw'>
             <Link to='/'>
               <img
-                src={siteLogo}
+                src={siteLogoImg}
                 width='75'
                 height='45'
                 alt='site-logo'
