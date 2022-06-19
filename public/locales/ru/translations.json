@@ -34,6 +34,10 @@
     "empty-list": "Пока не создано ни одного обращения",
     "create-issue": "Создать обращение"
   },
+  "organizations": {
+    "empty-list": "Пока не добавлено ни одной организации",
+    "create-organization": "Добавить организацию"
+  },
   "apollo": {
     "hook-loading": "Загрузка ...",
     "hook-error": "Ошибка! "
