@@ -1,13 +1,14 @@
-FROM node:17.7.1-alpine as node-stage
-WORKDIR /tmp
-COPY package*.json /tmp/
+FROM node:18.4.0-alpine as node-stage
+WORKDIR /usr/src/tmp
+COPY package*.json ./
 RUN ["npm", "install"]
 CMD ["npm", "run", "build"]
-WORKDIR /dist
-COPY /dist/ /usr/src/app
+CMD ["npm", "run", "build"]
+WORKDIR /usr/src/tmp/dist/
+COPY . /usr/src/app
 
-FROM nginx:1.21.6-alpine as nginx-stage
-COPY --from=node-stage /usr/src/app/ /usr/share/nginx/html
+FROM nginx:1.22.0-alpine as nginx-stage
+COPY --from=node-stage /usr/src/app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
