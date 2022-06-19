@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: 🧩 Install modules
-        run: npm ci
+        run: npm install --save --legacy-peer-deps
       - name: 🗜 Build project
         run: npm run build
       - name: 📕 Build storybook
