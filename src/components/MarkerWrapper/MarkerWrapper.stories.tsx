@@ -111,7 +111,6 @@ export default {
     },
   },
 } as ComponentMeta<typeof Marker>;
-} as ComponentMeta<typeof Marker>;
 
 const props = {
   status: 'none',
