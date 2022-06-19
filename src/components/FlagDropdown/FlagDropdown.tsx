@@ -8,7 +8,7 @@ import './FlagDropdown.style.scss';
 
 import { FlagDropdownItem } from '../FlagDropdown/FlagDropdownItem';
 
-import { locales } from '../../../public/locales/locales.ts';
+import { locales } from '/public/locales/locales.ts';
 
 interface ILocale {
   name: string;
