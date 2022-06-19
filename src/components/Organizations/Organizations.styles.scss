@@ -1,0 +1,115 @@
+@import 'public/styles/vars';
+
+.organizations {
+  &__container {
+    margin: 0 auto;
+    max-width: 1230px;
+    padding: 20px 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: 80vh;
+  }
+
+  &__territory {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+    margin-right: 20px;
+  }
+
+  .empty-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+
+    &__msg {
+      margin-bottom: 20px;
+    }
+    &__link {
+      width: fit-content;
+    }
+  }
+}
+
+.leaflet-container {
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 80vh;
+  width: 100%;
+}
+.organization {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0;
+  border: 1px solid $color-bg-gray-dark;
+  margin-bottom: 20px;
+
+  &:hover {
+    flood-color: aquamarine;
+    -webkit-box-shadow: 0 10px 13px -7px $color-logo-blue, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0 10px 13px -7px $color-logo-blue, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  }
+
+  &__header-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    background-color: $color-bg-gray;
+  }
+
+  &__icon {
+    width: 65px;
+    height: auto;
+    cursor: grab;
+    margin-right: 5px;
+  }
+
+  &__title {
+    color: $color-text-white;
+    font-size: 17px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-text-gray;
+    padding: 10px 10px 0 10px;
+
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__title:not(:last-child) {
+      margin-bottom: 5px;
+    }
+
+    &__phone {
+    }
+  }
+  &__address {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 5px;
+  }
+}
