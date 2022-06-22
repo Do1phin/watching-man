@@ -1,4 +1,4 @@
-import * as path from 'path';
+import path from 'path';
 
 import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
 import type { Configuration } from 'webpack';
@@ -34,12 +34,9 @@ const config: Configuration | DevServerConfiguration = {
   entry: {
     index: './src/index.tsx',
   },
-  module: {
-    rules: [ruleBabel, ruleHtml, rulePic, ruleCss],
-  },
   optimization: {
-    minimize: true,
-    minimizer: [pluginTerser],
+    // minimize: true, // check
+    // minimizer: [pluginTerser], // check
     moduleIds: 'deterministic',
     runtimeChunk: 'single',
     splitChunks: {
@@ -67,7 +64,9 @@ const config: Configuration | DevServerConfiguration = {
   performance: {
     hints: false,
   },
-  plugins: [pluginHtml, pluginMiniCssExtract, pluginBundleAnalyzer],
+  module: {
+    rules: [ruleBabel, ruleHtml, rulePic, ruleCss],
+  },
   resolve: {
     alias: {
       components: path.resolve(__dirname, './src/components/'),
@@ -79,6 +78,8 @@ const config: Configuration | DevServerConfiguration = {
     },
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
+  // plugins: [pluginHtml], // this working
+  plugins: [pluginHtml],
 };
 
 export default config;

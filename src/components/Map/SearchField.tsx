@@ -9,27 +9,27 @@ const SearchField: FC = () => {
   const provider = new OpenStreetMapProvider();
 
   const searchControl = new GeoSearchControl({
+    animateZoom: true,
+    autoComplete: true,
+    autoClose: false,
+    autoCompleteDelay: 250,
     notFoundMessage: 'Sorry, that address could not be found.',
+    keepResult: false,
     provider: provider,
+    retainZoomLevel: false,
     style: 'bar',
-    autoComplete: true, // optional: true|false  - default true
-    autoCompleteDelay: 250, // optional: number      - default 250
-    showMarker: true, // optional: true|false  - default true
-    showPopup: false, // optional: true|false  - default false
+    showMarker: true,
+    showPopup: false,
     marker: {
       // optional: L.MarkerWrapper    - default L.Icon.Default
       icon: markerStyleHelper('SEARCH'), //new L.Icon.Default(),
       draggable: false,
     },
-    popupFormat: ({ query, result }) => result.label, // optional: function    - default returns result label,
-    resultFormat: ({ result }) => result.label, // optional: function    - default returns result label
-    maxMarkers: 1, // optional: number      - default 1
-    retainZoomLevel: false, // optional: true|false  - default false
-    animateZoom: true, // optional: true|false  - default true
-    autoClose: false, // optional: true|false  - default false
-    searchLabel: 'Enter address', // optional: string      - default 'Enter address'
-    keepResult: false, // optional: true|false  - default false
-    updateMap: true, // optional: true|false  - default true
+    popupFormat: ({ query, result }) => result.label,
+    resultFormat: ({ result }) => result.label,
+    maxMarkers: 1,
+    searchLabel: 'Enter address',
+    updateMap: true,
   });
 
   useEffect(() => {

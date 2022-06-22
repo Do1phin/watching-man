@@ -1,7 +1,13 @@
 @import 'https://unpkg.com/leaflet@1.8.0/dist/leaflet.css';
 @import 'https://unpkg.com/react-leaflet-markercluster/dist/styles.min.css';
 @import 'public/styles/vars';
+// NOTE: styles are included via {<link />} tag at {index.html}
+//@import "~leaflet/dist/leaflet.css";
+//@import "~react-leaflet-markercluster/dist/styles.min.css";
 
+.markercluster-map {
+  height: 90vh;
+}
 .leaflet-container {
   height: 85vh;
   margin: 20px auto 20px auto;
@@ -44,5 +50,3 @@
     width: fit-content;
   }
 }
-
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIk1hcC5zdHlsZXMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSwwREFBMEQ7QUFDMUQsMkVBQTJFO0FBQzNFLDRCQUE0Qjs7QUFFNUI7RUFDRSxZQUFBO0VBRUYsMkJBQUE7RUFFRSxnQkFBZ0I7RUFIaEIsa0JBQWE7RUFFZixhQUFBOztFQUlFO0VBRUE7RUFEQTtFQUZBO0VBSUY7RUFDRTtFQUNBO0VBQ0E7RUFDQTtJQUNFLGdCQUFnQjtFQUNsQjtFQUNBO0lBQ0UsVUFBVTtFQUNaO0VBQ0E7SUFDRSxpQkFBaUI7RUFDbkI7QUFDRjs7QUFFQTtFQUtFLGVBQWU7RUFKZixrQkFBa0I7RUFDbEIsV0FBVztFQUNYLFNBQVM7RUFDVCxjQUFjOztFQUdkO0lBQ0UsWUFBWTtJQUtaLG1CQUFtQjtJQUZuQixTQUFTO0lBRlQsa0JBQWtCO0lBQ2xCLFFBQVE7SUFFUixnQ0FBZ0M7SUFFaEMsa0JBQWtCO0VBQ3BCO0FBQ0YiLCJmaWxlIjoiTWFwLnN0eWxlcy5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnaHR0cHM6Ly91bnBrZy5jb20vbGVhZmxldEAxLjguMC9kaXN0L2xlYWZsZXQuY3NzJztcbkBpbXBvcnQgJ2h0dHBzOi8vdW5wa2cuY29tL3JlYWN0LWxlYWZsZXQtbWFya2VyY2x1c3Rlci9kaXN0L3N0eWxlcy5taW4uY3NzJztcblxuLmxlYWZsZXQtY29udGFpbmVyIHtcbiAgaGVpZ2h0OiA5MHZoO1xuICBtYXJnaW46IDIwcHggYXV0byAyMHB4IGF1dG87XG4gIHdpZHRoOiAxMjAwcHg7XG59Il19 */
