@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
+import { useTranslation } from 'react-i18next';
 import { useMyPosition } from '../Map/hooks/useMyPosition';
 import { concat } from 'lodash';
 
@@ -27,6 +28,7 @@ const FullMap: FC = (): JSX.Element => {
   const { loading, error, data } = useQuery(GET_ALL_ISSUES);
   const [map, setMap] = useState(null);
   const { coords } = useMyPosition();
+  const { t } = useTranslation();
 
   const addAllMarkers = (data) => {
     if (data) {
@@ -62,8 +64,8 @@ const FullMap: FC = (): JSX.Element => {
     data && addAllMarkers(data);
   }, [data]);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>`Error! ${error.message}`</p>;
+  if (loading) return <p className='hook-loading__msg'>{t('apollo.hook-loading')}</p>;
+  if (error) return <p className='hook-error__msg'>{t('apollo.hook-error')} 😧</p>;
 
   return (
     <section className='full-map'>
