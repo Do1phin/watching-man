@@ -110,12 +110,7 @@ const Organizations: FC = (): JSX.Element => {
   const error = '';
 
   if (loading) return <p className='hook-loading__msg'>{t('apollo.hook-loading')}</p>;
-  if (error)
-    return (
-      <p className='hook-error__msg'>
-        {t('apollo.hook-error')} ${error.message}
-      </p>
-    );
+  if (error) return <p className='hook-error__msg'>{t('apollo.hook-error')} 😧</p>;
 
   const initialMapState = {
     attributionControl: false,
