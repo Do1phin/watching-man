@@ -16,6 +16,7 @@ const mapState = {
   center: [50.447844, 30.524545],
   doubleClickZoom: false,
   dragging: true,
+  maxZoom: 18,
   scrollWheelZoom: true,
   zoom: 7,
   zoomControl: true,

@@ -1,4 +1,4 @@
-name: '✅ Checking with linters'
+name: '🔎 Checking with linters'
 
 on:
   push:

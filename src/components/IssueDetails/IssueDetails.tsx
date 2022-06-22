@@ -12,6 +12,7 @@ import { createMarkerHelper } from '../../helpers/createMarkerHelper';
 const IssueDetails: FC = (): JSX.Element => {
   const { t } = useTranslation();
   const [map, setMap] = useState(null);
+  const [address, setAddress] = useState('');
   const location = useLocation();
   const data = location.state;
 
@@ -43,10 +44,12 @@ const IssueDetails: FC = (): JSX.Element => {
 
             <hr />
 
+            {/*{<span>{a}</span>}*/}
             {/*<p className='info__place'>*/}
             {/*  {t('details.place')}*/}
             {/*  <span>{data.place}</span>*/}
             {/*</p>*/}
+            {address}
 
             <p className='info__coordinates'>
               {t('details.coordinates')}
@@ -55,7 +58,13 @@ const IssueDetails: FC = (): JSX.Element => {
               </span>
             </p>
 
-            <Map initialMapState={mapState} markers={markers} noPopupMarker whenReadyCb={setMap} />
+            <Map
+              initialMapState={mapState}
+              markers={markers}
+              noPopupMarker
+              whenReadyCb={setMap}
+              // setAddress={setAddress}
+            />
 
             <p className='info__status'>{data.status}</p>
             <p className='info__title'>

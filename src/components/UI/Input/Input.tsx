@@ -40,7 +40,7 @@ interface IProps {
   ref?: any;
 }
 
-export const Input = (props: IProps) => {
+const Input = (props: IProps) => {
   const {
     disabled,
     icon,
@@ -78,3 +78,5 @@ export const Input = (props: IProps) => {
     </>
   );
 };
+
+export { Input };

@@ -64,13 +64,6 @@
         "allowSeparatedGroups": true
       }
     ],
-    "settings": {
-      "import/resolver": {
-        "node": {
-          "extensions": [".js", ".jsx", ".ts", ".tsx"]
-        }
-      }
-    },
     "sort-keys": ["error", "asc", { "caseSensitive": true, "natural": false, "minKeys": 2 }],
     "sort-vars": ["error", { "ignoreCase": true }]
   }
