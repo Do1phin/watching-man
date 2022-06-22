@@ -2,6 +2,8 @@ import React, { FC, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
+import { client } from '../../apollo/config';
+
 import './App.styles.scss';
 import '/public/styles/normalize.scss';
 import '/public/styles/base.scss';
@@ -12,12 +14,6 @@ import { IssuesList } from '../IssuesList/IssuesList';
 import { IssueDetails } from '../IssueDetails/IssueDetails';
 import { FullMap } from '../FullMap/FullMap';
 import { Organizations } from '../Organizations/Organizations';
-
-export const client = new ApolloClient({
-  cache: new InMemoryCache(),
-  connectToDevTools: true,
-  uri: 'http://localhost:9000/api/graphql',
-});
 
 export const App: FC = (): JSX.Element => {
   return (
