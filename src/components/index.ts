@@ -1,4 +1,14 @@
 export { App } from './App/App';
+export { Carousel } from './Carousel/Carousel';
+export { CreateIssue } from './CreateIssue/CreateIssue';
 export { FlagDropdown } from './FlagDropdown/FlagDropdown';
-export { Header } from './Header/Header';
 export { Footer } from './Footer/Footer';
+export { FullMap } from './FullMap/FullMap';
+export { Header } from './Header/Header';
+export { IssueDetails } from './IssueDetails/IssueDetails';
+export { IssuesList } from './IssuesList/IssuesList';
+export { Map } from './Map/Map';
+export { MarkerWrapper } from './MarkerWrapper/MarkerWrapper';
+export { Organizations } from './Organizations/Organizations';
+export { SetCity } from './SetCity/SetCity';
+export { Input } from './UI/Input/Input';
