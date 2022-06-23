@@ -8,12 +8,9 @@ import './App.styles.scss';
 import '/public/styles/normalize.scss';
 import '/public/styles/base.scss';
 
-import { MainLayout } from '../../layouts/';
-import { About, Home } from '../../pages/';
-import { IssuesList } from '../IssuesList/IssuesList';
-import { IssueDetails } from '../IssueDetails/IssueDetails';
-import { FullMap } from '../FullMap/FullMap';
-import { Organizations } from '../Organizations/Organizations';
+import { MainLayout } from '../../layouts';
+import { About, Home, NotFound } from '../../pages';
+import { CreateIssue, FullMap, IssueDetails, IssuesList, Organizations } from '../index';
 
 export const App: FC = (): JSX.Element => {
   return (
@@ -28,8 +25,10 @@ export const App: FC = (): JSX.Element => {
                   <Route path='/about' element={<About />} />
                   <Route path='/organizations' element={<Organizations />} />
                   <Route path='/issues' element={<IssuesList />} />
+                  <Route path='/issues/create' element={<CreateIssue />} />
                   <Route path='/issues/:id' element={<IssueDetails />} />
                   <Route path='/map' element={<FullMap />} />
+                  <Route path='*' element={<NotFound />} />
                 </Route>
               </Routes>
             </BrowserRouter>
