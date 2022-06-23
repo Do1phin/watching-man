@@ -9,7 +9,7 @@ FROM node_base AS build
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . ./
-CMD ["npm", "run", "build"]
+RUN ["npm", "run", "build"]
 
 FROM nginx:1.22.0-alpine
 COPY --from=build /app/dist /usr/share/nginx/html
