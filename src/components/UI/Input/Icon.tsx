@@ -1,9 +1,11 @@
 import React from 'react';
 
-export const MyIcon: React.FC = () => {
+const MyIcon: React.FC = () => {
   return (
     <>
-      <img src='https://www.iconpacks.net/icons/2/free-icon-eu-gdpr-security-1744.png'  alt='' />
+      <img src='https://www.iconpacks.net/icons/2/free-icon-eu-gdpr-security-1744.png' alt='' />
     </>
   );
 };
+
+export { MyIcon };

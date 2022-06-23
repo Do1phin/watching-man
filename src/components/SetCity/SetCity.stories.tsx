@@ -56,8 +56,6 @@ const props = {
   locality: 'Курахово',
 };
 
-export const Simple = Template.bind({});
-Simple.args = {
-  ...Simple.args,
+export const Simple = Template.bind({
   ...props,
-};
+});

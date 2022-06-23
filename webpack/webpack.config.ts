@@ -34,9 +34,12 @@ const config: Configuration | DevServerConfiguration = {
   entry: {
     index: './src/index.tsx',
   },
+  module: {
+    rules: [ruleBabel, ruleHtml, rulePic, ruleCss],
+  },
   optimization: {
-    // minimize: true, // check
-    // minimizer: [pluginTerser], // check
+    minimize: true, // check
+    minimizer: [pluginTerser], // check
     moduleIds: 'deterministic',
     runtimeChunk: 'single',
     splitChunks: {
@@ -64,9 +67,7 @@ const config: Configuration | DevServerConfiguration = {
   performance: {
     hints: false,
   },
-  module: {
-    rules: [ruleBabel, ruleHtml, rulePic, ruleCss],
-  },
+  plugins: [pluginHtml, pluginBundleAnalyzer],
   resolve: {
     alias: {
       components: path.resolve(__dirname, './src/components/'),
@@ -77,9 +78,12 @@ const config: Configuration | DevServerConfiguration = {
       styles: path.resolve(__dirname, './public/styles/'),
     },
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    // fallback: {
+    //   fs: false,
+    //   os: false,
+    //   path: false,
+    // },
   },
-  // plugins: [pluginHtml], // this working
-  plugins: [pluginHtml],
 };
 
 export default config;

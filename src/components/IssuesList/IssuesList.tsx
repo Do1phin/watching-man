@@ -10,7 +10,7 @@ import { GET_ALL_ISSUES } from '../../apollo/operations/queries/allIssues';
 
 import './IssuesList.style.scss';
 
-interface Issue {
+interface IIssue {
   title: string;
   description: string;
   city: string;
@@ -48,7 +48,7 @@ const IssuesList = () => {
           )}
           <div className='issue__list'>
             {data &&
-              map(data.allIssues, (issue: Issue) => {
+              map(data.allIssues, (issue: IIssue) => {
                 return <Issue {...issue} />;
               })}
           </div>

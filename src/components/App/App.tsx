@@ -1,6 +1,6 @@
 import React, { FC, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 
 import { client } from '../../apollo/config';
 
