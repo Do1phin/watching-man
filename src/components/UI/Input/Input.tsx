@@ -10,20 +10,15 @@ export enum Type {
 }
 
 export enum IconPosition {
-  START = 'start',
   END = 'end',
+  START = 'start',
 }
 
 export enum Status {
+  ERROR = 'error',
   NONE = 'none',
   SUCCESS = 'success',
-  ERROR = 'error',
 }
-
-const a = {
-  b: 1,
-  a: 0,
-};
 
 interface IProps {
   value?: string;

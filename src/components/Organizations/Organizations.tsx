@@ -1,9 +1,9 @@
 import cx from 'classnames';
 import React, { FC, useState } from 'react';
-import { useQuery } from '@apollo/client';
-import { map, orderBy, assign } from 'lodash';
+// import { useQuery } from '@apollo/client';
+import { assign, map, orderBy } from 'lodash';
 import { useTranslation } from 'react-i18next';
-import { GET_ORGANIZATIONS } from '';
+// import { GET_ORGANIZATIONS } from '';
 
 import './Organizations.styles.scss';
 

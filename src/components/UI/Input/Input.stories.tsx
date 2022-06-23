@@ -132,14 +132,10 @@ const props = {
   type: 'text',
 };
 
-export const Simple = Template.bind({});
-Simple.args = {
-  ...Simple.args,
+export const Simple = Template.bind({
   ...props,
-};
+});
 
-export const Icon = TemplateWithIcon.bind({});
-Icon.args = {
-  ...Icon.args,
+export const Icon = TemplateWithIcon.bind({
   ...props,
-};
+});

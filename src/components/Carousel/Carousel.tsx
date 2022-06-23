@@ -12,22 +12,22 @@ const slidesData = [
   {
     id: 1,
     type: 'img',
-    url: 'https://swiperjs.com/demos/images/nature-1.jpg',
+    url: 'https://img.freepik.com/free-photo/hostomil-reg-ukraine-apr-22-2022-an-unexploded-rocket-of-the-russian-occupying-troops-sticks-out-of-the-road_173948-7894.jpg',
   },
   {
     id: 2,
     type: 'img',
-    url: 'https://swiperjs.com/demos/images/nature-2.jpg',
+    url: 'https://img.freepik.com/free-photo/panorama-of-grunge-wall-of-building-on-street-in-summer-day-modern-and-luxury-3d-illustration-style-for-hipster-and-cyberpunk-grunge-template_510351-7455.jpg',
   },
   {
     id: 3,
     type: 'img',
-    url: 'https://swiperjs.com/demos/images/nature-3.jpg',
+    url: 'https://img.freepik.com/free-photo/neatly-collected-construction-debris-in-bags-and-piled-in-a-heap-in-city-courtyard-outside-building_262238-2300.jpg',
   },
   {
     id: 4,
     type: 'img',
-    url: 'https://swiperjs.com/demos/images/nature-3.jpg',
+    url: 'https://img.freepik.com/free-photo/stone-cover-and-manhole-of-an-ancient-deep-well_361360-993.jpg',
   },
 ];
 
@@ -50,8 +50,8 @@ const Carousel: FC = (props): JSX.Element => {
         {slidesData.map((slide) => (
           <SwiperSlide key={slide.id}>
             <picture className='item__photo'>
-              <source srcSet={`/images/issues/${id}/0${slide.id}.webp`} type='image/webp'></source>
-              <img src={`/images/issues/${id}/0${slide.id}.jpeg`} alt='Фото к обращению'></img>
+              {/*<source srcSet={`/images/issues/${id}/0${slide.id}.webp`} type='image/webp'></source>*/}
+              <img src={slide.url} alt='Фото к обращению'></img>
             </picture>
           </SwiperSlide>
         ))}
@@ -68,8 +68,8 @@ const Carousel: FC = (props): JSX.Element => {
         {slidesData.map((slide) => (
           <SwiperSlide key={slide.id}>
             <picture className='item__photo'>
-              <source srcSet={`/images/issues/${id}/0${slide.id}.webp`} type='image/webp'></source>
-              <img src={`/images/issues/${id}/0${slide.id}.jpeg`} alt='Превью обращения'></img>
+              {/*<source srcSet={`/images/issues/${id}/0${slide.id}.webp`} type='image/webp'></source>*/}
+              <img src={slide.url} alt='Превью обращения'></img>
             </picture>
           </SwiperSlide>
         ))}

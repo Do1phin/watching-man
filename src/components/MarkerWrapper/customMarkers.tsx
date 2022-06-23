@@ -1,6 +1,7 @@
 import L from 'leaflet';
 
 const blueMarker = L.divIcon({
+  className: 'svg-icon blue-marker',
   html: `
 <svg 
   width="25px" 
@@ -20,12 +21,12 @@ const blueMarker = L.divIcon({
     fill="#21618C"/>
  </g>
 </svg>`,
-  className: 'svg-icon blue-marker',
   iconAnchor: [10, 41],
   iconSize: [25, 41],
 });
 
 const redMarker = L.divIcon({
+  className: 'svg-icon red-marker',
   html: `
 <svg 
   width="25px" 
@@ -45,12 +46,12 @@ const redMarker = L.divIcon({
     fill="#943126"/>
  </g>
 </svg>`,
-  className: 'svg-icon red-marker',
   iconAnchor: [10, 41],
   iconSize: [25, 41],
 });
 
 const greenMarker = L.divIcon({
+  className: 'svg-icon green-marker',
   html: `
 <svg 
   width="25px" 
@@ -70,12 +71,12 @@ const greenMarker = L.divIcon({
     fill="#1D8348"/>
  </g>
 </svg>`,
-  className: 'svg-icon green-marker',
   iconAnchor: [10, 41],
   iconSize: [25, 41],
 });
 
 const yellowMarker = L.divIcon({
+  className: 'svg-icon yellow-marker',
   html: `
 <svg 
   width="25px" 
@@ -95,12 +96,12 @@ const yellowMarker = L.divIcon({
     fill="#9A7D0A"/>
  </g>
 </svg>`,
-  className: 'svg-icon yellow-marker',
   iconAnchor: [10, 41],
   iconSize: [25, 41],
 });
 
 const orangeMarker = L.divIcon({
+  className: 'svg-icon orange-marker',
   html: `
 <svg 
   width="25px" 
@@ -120,12 +121,12 @@ const orangeMarker = L.divIcon({
     fill="#9C640C"/>
  </g>
 </svg>`,
-  className: 'svg-icon orange-marker',
   iconAnchor: [10, 41],
   iconSize: [25, 41],
 });
 
 const grayMarker = L.divIcon({
+  className: 'svg-icon gray-marker',
   html: `
 <svg 
   width="25px" 
@@ -145,12 +146,12 @@ const grayMarker = L.divIcon({
     fill="#515A5A"/>
  </g>
 </svg>`,
-  className: 'svg-icon gray-marker',
   iconAnchor: [10, 41],
   iconSize: [25, 41],
 });
 
 const myMarker = L.divIcon({
+  className: 'svg-icon my-marker',
   html: `
 <svg 
   width="25px" 
@@ -170,7 +171,6 @@ const myMarker = L.divIcon({
     fill="#633974"/>
  </g>
 </svg>`,
-  className: 'svg-icon my-marker',
   iconAnchor: [10, 41],
   iconSize: [25, 41],
 });

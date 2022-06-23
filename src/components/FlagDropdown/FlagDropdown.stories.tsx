@@ -34,8 +34,6 @@ export default {
 
 const props = {};
 
-export const WithTitle = Template.bind({});
-WithTitle.args = {
-  ...WithTitle.args,
+export const WithTitle = Template.bind({
   ...props,
-};
+});

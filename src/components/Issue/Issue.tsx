@@ -17,8 +17,10 @@ const Issue = (props) => {
 
         <div className='item__body'>
           <picture className='item__photo'>
-            <source srcSet={`/images/issues/${id}/01.webp`} type='image/webp'></source>
-            <img src={`/images/issues/${id}/01.jpeg`} alt='Фото к обращению'></img>
+            {/*<source srcSet={`/images/issues/${id}/01.webp`} type='image/webp'></source>*/}
+            <img
+              src='https://img.freepik.com/free-photo/hostomil-reg-ukraine-apr-22-2022-an-unexploded-rocket-of-the-russian-occupying-troops-sticks-out-of-the-road_173948-7894.jpg'
+              alt='Фото к обращению'></img>
           </picture>
         </div>
 
