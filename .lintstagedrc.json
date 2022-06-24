@@ -1,3 +1,4 @@
 {
-  "src/**/*.{js,ts,jsx,tsx}": ["lint:fix", "postcss:fix"]
+  "src/**/*.{js,ts,jsx,tsx}": ["lint:fix"],
+  "src/**/*.{css,scss,sass}": ["postcss:fix"]
 }
