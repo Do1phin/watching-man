@@ -1,6 +1,5 @@
 export { App } from './App/App';
 export { Carousel } from './Carousel/Carousel';
-export { CreateIssue } from './CreateIssue/CreateIssue';
 export { FlagDropdown } from './FlagDropdown/FlagDropdown';
 export { Footer } from './Footer/Footer';
 export { FullMap } from './FullMap/FullMap';

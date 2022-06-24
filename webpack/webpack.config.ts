@@ -38,7 +38,7 @@ const config: Configuration | DevServerConfiguration = {
     rules: [ruleBabel, ruleHtml, rulePic, ruleCss],
   },
   optimization: {
-    minimize: true, // check
+    minimize: false, // check
     minimizer: [pluginTerser], // check
     moduleIds: 'deterministic',
     runtimeChunk: 'single',
@@ -67,7 +67,7 @@ const config: Configuration | DevServerConfiguration = {
   performance: {
     hints: false,
   },
-  plugins: [pluginHtml, pluginBundleAnalyzer],
+  plugins: [pluginHtml],
   resolve: {
     alias: {
       components: path.resolve(__dirname, './src/components/'),
