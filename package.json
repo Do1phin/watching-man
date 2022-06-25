@@ -13,7 +13,8 @@
     "postcss:check": "postcss ./src/**/*.scss --syntax postcss-scss --use css-declaration-sorter",
     "postcss:fix": "postcss ./src/**/*.scss --syntax postcss-scss --use css-declaration-sorter --replace",
     "storybook": "start-storybook -p 6006",
-    "storybook:build": "build-storybook"
+    "storybook:build": "build-storybook",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -67,6 +68,7 @@
     "css-loader": "^6.7.1",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-webpack": "^0.13.2",
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -107,6 +109,7 @@
     "i18next-chained-backend": "^3.0.2",
     "i18next-http-backend": "^1.4.1",
     "leaflet": "^1.8.0",
+    "leaflet-control-geocoder": "^2.4.0",
     "leaflet-geosearch": "^3.6.1",
     "leaflet.markercluster": "^1.5.3",
     "react": "^18.1.0",

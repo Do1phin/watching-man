@@ -70,7 +70,7 @@ const config: Configuration | DevServerConfiguration = {
   plugins: [pluginHtml],
   resolve: {
     alias: {
-      components: path.resolve(__dirname, './src/components/'),
+      helpers: path.resolve(__dirname, 'src/helpers/'),
       images: path.resolve(__dirname, './public/images/'),
       layouts: path.resolve(__dirname, './src/layouts/'),
       locales: path.resolve(__dirname, './public/locales/'),

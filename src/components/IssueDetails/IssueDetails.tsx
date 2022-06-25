@@ -21,6 +21,7 @@ const IssueDetails: FC = (): JSX.Element => {
     center: [data.point.lat, data.point.lon],
     doubleClickZoom: false,
     dragging: false,
+    maxZoom: 18,
     scrollWheelZoom: true,
     zoom: 17,
     zoomControl: false,
@@ -43,13 +44,6 @@ const IssueDetails: FC = (): JSX.Element => {
             </p>
 
             <hr />
-
-            {/*{<span>{a}</span>}*/}
-            {/*<p className='info__place'>*/}
-            {/*  {t('details.place')}*/}
-            {/*  <span>{data.place}</span>*/}
-            {/*</p>*/}
-            {address}
 
             <p className='info__coordinates'>
               {t('details.coordinates')}

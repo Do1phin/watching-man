@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 
 import './Organizations.styles.scss';
 
-import { Map } from '../Map/Map';
+import { Map } from '../index';
 
 type Contact = {
   phone: string;
@@ -73,7 +73,9 @@ const Organizations: FC = (): JSX.Element => {
 
   const comparedOrganizations = (organizations) => orderBy(organizations, 'order', ['asc']);
 
-  const handleCreateOrganization = () => {};
+  const handleCreateOrganization = () => {
+    console.log('');
+  };
 
   const handleDragStart = (e, organization) => {
     setCurrentOrganization(organization);
@@ -118,6 +120,7 @@ const Organizations: FC = (): JSX.Element => {
     doubleClickZoom: false,
     dragging: true,
     drawControl: true,
+    maxZoom: 18,
     scrollWheelZoom: true,
     zoom: 15,
     zoomControl: true,

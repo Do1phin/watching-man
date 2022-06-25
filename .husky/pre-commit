@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm run postcss:fix
+git add *.scss
+
+#npm run lint:fix
+#git add *.js *.jsx *.ts *.tsx
