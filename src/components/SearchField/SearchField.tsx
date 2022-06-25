@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react';
 import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
 import { useMap } from 'react-leaflet';
-import { markerStyleHelper } from '../../helpers/markerStyleHelper';
+import { markerStyleHelper } from '../../helpers';
 
 const SearchField: FC = () => {
   const map = useMap();
@@ -20,9 +20,9 @@ const SearchField: FC = () => {
     },
     maxMarkers: 1,
     notFoundMessage: 'Sorry, that address could not be found.',
-    popupFormat: ({ query, result }) => result.label,
+    // popupFormat: ({ query, result }) => result.label,
     provider: provider,
-    resultFormat: ({ result }) => result.label,
+    // resultFormat: ({ result }) => result.label,
     retainZoomLevel: false,
     searchLabel: 'Enter address',
     showMarker: true,
@@ -34,7 +34,7 @@ const SearchField: FC = () => {
   useEffect(() => {
     map.addControl(searchControl);
     return () => map.removeControl(searchControl);
-  }, []);
+  }, [map, searchControl]);
 
   return null;
 };

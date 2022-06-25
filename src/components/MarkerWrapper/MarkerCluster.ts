@@ -13,9 +13,9 @@ const MarkerCluster = (props) => {
   console.log('clust', props);
 
   useEffect(() => {
-    const marker1 = L.marker([50, 47.1111], {}).bindPopup(`Name: 1`);
-    const marker2 = L.marker([50, 47.1122], {}).bindPopup(`Name: 2`);
-    const marker3 = L.marker([50, 47.1144], {}).bindPopup(`Name: 3`);
+    const marker1 = L.marker([50, 47.1111], {}).bindPopup('Name: 1');
+    const marker2 = L.marker([50, 47.1122], {}).bindPopup('Name: 2');
+    const marker3 = L.marker([50, 47.1144], {}).bindPopup('Name: 3');
 
     const container = context.layerContainer || context.map;
 

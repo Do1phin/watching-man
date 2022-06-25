@@ -14,12 +14,11 @@
     "moduleResolution": "Node",
     "baseUrl": "./",
     "paths": {
-      "@src/*": ["./src/*"],
-      "@pages/*": ["./src/pages/*"],
-      "@public/*": ["./public/*"],
-      "@images/*": ["./public/images/*"],
-      "@styles/*": ["./public/styles/*"],
-      "@locales/*": ["./public/locales/*"],
+      "@h/*": [
+        "helpers/*"
+      ],
+//      "@components/*": ["src/components/*"],
+//      "@helpers/*": ["./src/helpers/*"]
     }
   },
   "include": ["src/**/*"],

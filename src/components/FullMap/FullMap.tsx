@@ -6,11 +6,11 @@ import { concat } from 'lodash';
 
 import './FullMap.styles.scss';
 
-import { GET_ALL_ISSUES } from '../../apollo/operations/index';
+import { GET_ALL_ISSUES } from '../../apollo/operations';
 
 import { Map } from '../Map/Map';
 
-import { createMarkerHelper } from '../../helpers/createMarkerHelper';
+import { createMarkerHelper } from '../../helpers';
 
 const mapState = {
   attributionControl: false,
@@ -25,7 +25,7 @@ const mapState = {
 
 const FullMap: FC = (): JSX.Element => {
   const [markers, setMarkers] = useState([]);
-  const { loading, error, data } = useQuery(GET_ALL_ISSUES);
+  const { loading, data } = useQuery(GET_ALL_ISSUES);
   const [map, setMap] = useState(null);
   const { coords } = useMyPosition();
   const { t } = useTranslation();
