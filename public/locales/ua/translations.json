@@ -17,14 +17,24 @@
     }
   },
   "map": {
-    "my-position": "Моє місцезнаходження"
+    "my-position": "Моє місцезнаходження",
+    "lat": "Довгота",
+    "lon": "Широта",
+    "building": "Будова",
+    "borough": "Район",
+    "country": "Країна",
+    "country-code": "Код країни",
+    "city": "Місто",
+    "postcode": "Індекс",
+    "road": "Вулиця",
+    "house-number": "Будинок"
   },
   "details": {
-    "issue-id": "id звернення: ",
-    "title": "Тема звернення: ",
-    "description": "Опис: ",
-    "coordinates": "Координати: ",
-    "create-timestamp": "Дата звернення: "
+    "issue-id": "id звернення",
+    "title": "Тема звернення",
+    "description": "Опис",
+    "coordinates": "Координати",
+    "create-timestamp": "Дата звернення"
   },
   "set-city": {
     "modal-error-permission": "На жаль, ви не надали доступу до геолокації браузера \uD83D\uDE25",
@@ -32,7 +42,10 @@
   },
   "issues": {
     "empty-list": "Поки що не створено жодного звернення",
-    "create-issue": "Створити звернення"
+    "create-issue": "Створити звернення",
+    "drag-and-drop": "Перетягніть, будь ласка, фотографії",
+    "no-photo-title": "Можна прикріпити до 10 фотографій",
+    "save-issue": "Зберегти"
   },
   "organizations": {
     "empty-list": "Поки що не додано жодної організації",
@@ -40,6 +53,9 @@
   },
   "apollo": {
     "hook-loading": "Завантаження ...",
-    "hook-error": "Помилка! "
+    "hook-error": "Помилка! \uD83D\uDE27",
+    "hook-success": "Дякуємо!",
+    "hook-create-issue-error": "На жаль, звернення не створено",
+    "hook-create-issue-created": "Звернення успішно створено"
   }
 }

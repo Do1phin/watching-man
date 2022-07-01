@@ -1,3 +1,3 @@
-export { createMarkerHelper } from './createMarkerHelper';
-export { getAddress } from './getAddress';
-export { markerStyleHelper } from './markerStyleHelper';
+export { createMarker } from './createMarker';
+export { changeMarkerStyle } from './changeMarkerStyle';
+export { getAddressFromCoords } from './getAddressFromCoords';

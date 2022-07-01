@@ -14,8 +14,8 @@ const useMyPermission = (permissionName) => {
       () => {
         return setPermission({ state: 'granted' });
       },
-      (i) => {
-        console.log('safari permission error', i);
+      () => {
+        return setPermission({ state: 'denied' });
       },
     );
   };
@@ -26,7 +26,9 @@ const useMyPermission = (permissionName) => {
       .then((result) => {
         return setPermission({ state: result.state });
       })
-      .catch((error) => console.error('permission error', error));
+      .catch(() => {
+        return setPermission({ state: 'denied' });
+      });
   };
 
   useEffect(() => {
@@ -35,7 +37,7 @@ const useMyPermission = (permissionName) => {
       return mySafariPermission();
     }
     return myPermission();
-  }, []);
+  }, [permission]);
 
   return {
     checkBrowserName,

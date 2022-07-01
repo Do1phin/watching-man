@@ -4,11 +4,10 @@ const blueMarker = L.divIcon({
   className: 'svg-icon blue-marker',
   html: `
 <svg 
-  width="25px" 
+  width="30px" 
   height="41px" 
-  viewBox="0 0 24 24" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  viewBox="0 0 20 22" 
   xmlns="http://www.w3.org/2000/svg" 
-  version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
 >
  <g transform="translate(0 -1028.4)">
   <path 
@@ -29,11 +28,10 @@ const redMarker = L.divIcon({
   className: 'svg-icon red-marker',
   html: `
 <svg 
-  width="25px" 
+  width="30px" 
   height="41px" 
-  viewBox="0 0 24 24" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  viewBox="0 0 20 22"
   xmlns="http://www.w3.org/2000/svg" 
-  version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
 >
  <g transform="translate(0 -1028.4)">
   <path 
@@ -54,11 +52,10 @@ const greenMarker = L.divIcon({
   className: 'svg-icon green-marker',
   html: `
 <svg 
-  width="25px" 
+  width="30px" 
   height="41px" 
-  viewBox="0 0 24 24" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  viewBox="0 0 20 22" 
   xmlns="http://www.w3.org/2000/svg" 
-  version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
 >
  <g transform="translate(0 -1028.4)">
   <path 
@@ -79,11 +76,10 @@ const yellowMarker = L.divIcon({
   className: 'svg-icon yellow-marker',
   html: `
 <svg 
-  width="25px" 
+  width="30px" 
   height="41px" 
-  viewBox="0 0 24 24" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  viewBox="0 0 20 22" 
   xmlns="http://www.w3.org/2000/svg" 
-  version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
 >
  <g transform="translate(0 -1028.4)">
   <path 
@@ -104,11 +100,10 @@ const orangeMarker = L.divIcon({
   className: 'svg-icon orange-marker',
   html: `
 <svg 
-  width="25px" 
+  width="30px" 
   height="41px" 
-  viewBox="0 0 24 24" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  viewBox="0 0 20 22" 
   xmlns="http://www.w3.org/2000/svg" 
-  version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
 >
  <g transform="translate(0 -1028.4)">
   <path 
@@ -129,11 +124,10 @@ const grayMarker = L.divIcon({
   className: 'svg-icon gray-marker',
   html: `
 <svg 
-  width="25px" 
+  width="30px" 
   height="41px" 
-  viewBox="0 0 24 24" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  viewBox="0 0 20 22" 
   xmlns="http://www.w3.org/2000/svg" 
-  version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
 >
  <g transform="translate(0 -1028.4)">
   <path 
@@ -154,25 +148,53 @@ const myMarker = L.divIcon({
   className: 'svg-icon my-marker',
   html: `
 <svg 
-  width="25px" 
-  height="41px" 
-  viewBox="0 0 24 24" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  width="35px" 
+  height="60px" 
   xmlns="http://www.w3.org/2000/svg" 
-  version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+
+  x="0px" 
+  y="0px" 
+  viewBox="0 0 1000 1000" 
 >
- <g transform="translate(0 -1028.4)">
-  <path 
-    d="m12 0c-4.4183 2.3685e-15 -8 3.5817-8 8 0 1.421 0.3816 2.75 1.0312 3.906 0.1079 0.192 0.221 0.381 0.3438 0.563l6.625 11.531 6.625-11.531c0.102-0.151 0.19-0.311 0.281-0.469l0.063-0.094c0.649-1.156 1.031-2.485 1.031-3.906 0-4.4183-3.582-8-8-8zm0 4c2.209 0 4 1.7909 4 4 0 2.209-1.791 4-4 4-2.2091 0-4-1.791-4-4 0-2.2091 1.7909-4 4-4z" 
-    transform="translate(0 1028.4)" 
-    fill="#9B59B6"/>
-  <path 
-    d="m12 3c-2.7614 0-5 2.2386-5 5 0 2.761 2.2386 5 5 5 2.761 0 5-2.239 5-5 0-2.7614-2.239-5-5-5zm0 2c1.657 0 3 1.3431 3 3s-1.343 3-3 3-3-1.3431-3-3 1.343-3 3-3z" 
-    transform="translate(0 1028.4)" 
-    fill="#633974"/>
- </g>
+<g><g><g>
+<circle 
+  cx="506.5" 
+  cy="107.7" 
+  r="97.7"
+/>
+<path 
+  fill="#8E44AD"
+  d="M820.7,39c-16.2-16.2-42.4-16.2-58.5,0L564,237.3c-15.8-10.3-34.5-16.3-54.8-16.3c-25,0-47.7,9.2-65.3,24.2L237.7,39c-16.1-16.2-42.3-16.2-58.5,0c-16.1,16.2-16.1,42.4,0,58.5l217.3,217.3c3.6,3.6,7.8,6.3,12.2,8.3v234.7c0,5.1,0.5,10,1.2,14.9c-0.7,3.1-1.2,6.2-1.2,9.6v366.3c0,22.9,18.5,41.4,41.4,41.4s41.4-18.5,41.4-41.4v-292c5.8,1.1,11.6,1.7,17.7,1.7c6.1,0,12-0.6,17.8-1.7v292c0,22.9,18.5,41.4,41.4,41.4c22.8,0,41.4-18.5,41.4-41.4V582.3c0-3.3-0.5-6.5-1.2-9.7c0.7-4.8,1.2-9.8,1.2-14.8V321.4c0-4.1-0.3-8-0.8-12L820.7,97.5C836.9,81.4,836.9,55.2,820.7,39z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></g>
 </svg>`,
   iconAnchor: [10, 41],
   iconSize: [25, 41],
 });
 
-export { myMarker, blueMarker, redMarker, greenMarker, yellowMarker, orangeMarker, grayMarker };
+const positionPin = L.divIcon({
+  className: 'svg-icon blue-flag',
+  html: `
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="60" viewBox="0 0 400 400">
+<g>
+</g>
+	<path d="M6100.562 12540.611l-24.361 282.215h55.266l-21.125-282.215z" fill="#000000"/>
+	<path d="M6150.686 12475.331c0 24.906-20.19 45.097-45.097 45.097s-45.097-20.191-45.097-45.097c0-24.906 20.19-45.097 45.097-45.097 24.907 0 45.097 20.191 45.097 45.097z" fill="#000000"/>
+	<path d="M6050.314 12562.914c-28.754-18.79-45.916-50.462-45.916-84.726 0-35.072 17.797-67.154 47.606-85.811l-10.864-17.357c-35.84 22.425-57.231 60.989-57.231 103.168 0 41.195 20.633 79.289 55.194 101.878l11.213-17.152z" fill="#000000"/>
+	<path d="M6155.684 12390.267c31.498 17.992 51.056 51.671 51.056 87.91 0 35.604-19.036 68.987-49.705 87.142l10.435 17.623c36.864-21.822 59.761-61.962 59.761-104.755 0-43.571-23.521-84.070-61.378-105.698l-10.168 17.776z" fill="#000000"/>
+	<path d="M6028.114 12605.481c-44.8-27.32-71.537-74.906-71.537-127.303 0-47.145 21.596-90.501 59.269-118.958l-12.339-16.343c-42.844 32.359-67.41 81.684-67.41 135.301 0 59.586 30.413 113.715 81.346 144.793l10.67-17.49z" fill="#000000"/>
+	<path d="M6192.824 12357.366c38.676 27.996 61.767 73.175 61.767 120.811 0 52.429-28.047 101.602-73.195 128.317l10.435 17.623c51.354-30.382 83.251-86.313 83.251-145.941 0-54.19-26.256-105.564-70.236-137.4l-12.022 16.589z" fill="#000000"/>
+	<path d="M390.471 74.373c-17.398-17.52-39.803-30.116-67.236-42.701-29.901-10.096-54.876-10.209-67.41 2.222-5.018 4.977-7.557 12.462-7.577 22.446 2.499 2.498 4.935 10.005 9.881 24.986l-72.847 112.077c-27.453-2.601-49.941 4.782-67.502 22.201-22.569 22.375-17.674 52.347 17.122 87.44 12.431 12.544 27.382 22.558 44.831 35.113l-70.523 149.535 90.429-139.458c19.938 10.066 42.373 17.685 62.361 17.726 29.921 5.13 49.92 0.195 62.464-12.226 12.524-12.421 17.562-27.402 10.158-44.871 0.062-15.002-9.882-30.034-19.804-45.056l55.419-129.577c17.5-2.437 24.996-4.894 30.024-9.892 12.534-12.4 10.107-29.901-9.789-49.961zM304.855 268.759c0 0 0 0-2.539 2.509-4.997 4.956-17.5 7.424-34.959 4.864-7.486-2.539-14.96-5.069-22.446-7.577l85.443-144.487 29.942 10.127-55.44 134.564zM384.993 95.498c-5.017 9.257-30.044 5.346-55.941-8.725-25.856-14.059-42.742-32.983-37.724-42.25 5.058-9.257 30.096-5.335 55.982 8.755 25.856 14.059 42.721 32.962 37.683 42.219z" fill="#8E44AD"/>
+</svg>`,
+  iconAnchor: [10, 41],
+  iconSize: [25, 41],
+});
+
+export {
+  myMarker,
+  blueMarker,
+  redMarker,
+  greenMarker,
+  yellowMarker,
+  orangeMarker,
+  grayMarker,
+  positionPin,
+};

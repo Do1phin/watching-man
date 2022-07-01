@@ -114,7 +114,7 @@ const Organizations: FC = (): JSX.Element => {
   if (loading) return <p className='hook-loading__msg'>{t('apollo.hook-loading')}</p>;
   if (error) return <p className='hook-error__msg'>{t('apollo.hook-error')} 😧</p>;
 
-  const initialMapState = {
+  const mapState = {
     attributionControl: false,
     center: [50.447844, 30.524545],
     doubleClickZoom: false,
@@ -124,16 +124,6 @@ const Organizations: FC = (): JSX.Element => {
     scrollWheelZoom: true,
     zoom: 15,
     zoomControl: true,
-  };
-
-  const fakeMarker = {
-    id: '53453453453',
-    point: {
-      lat: 50,
-      lon: 40,
-    },
-    status: 'MY',
-    title: 'test',
   };
 
   return (
@@ -186,7 +176,7 @@ const Organizations: FC = (): JSX.Element => {
               </>
             )}
             <div className='organizations__territory'>
-              {<Map initialMapState={initialMapState} markers={[fakeMarker]} noPopupMarker />}
+              <Map data-class={'organizations-map'} mapState={mapState} />
             </div>
           </div>
         </div>

@@ -5,8 +5,7 @@ import cx from 'classnames';
 
 import './Header.styles.scss';
 
-import { SetCity } from '../SetCity/SetCity';
-import { FlagDropdown } from '../FlagDropdown/FlagDropdown';
+import { FlagDropdown, SetCity } from '../index';
 
 import siteLogoImg from '/public/images/site-logo-transp.png';
 
@@ -63,7 +62,7 @@ export const Header: FC = (): JSX.Element => {
               <SetCity />
             </div>
 
-            <div className='header__cabinet-wrapper cabinet'>[mock auth block]</div>
+            <div className='header__cabinet-wrapper cabinet'>[authorization block]</div>
 
             <div className='header__lang-dropdown-wrapper'>
               <FlagDropdown />

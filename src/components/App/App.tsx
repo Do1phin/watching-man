@@ -9,7 +9,7 @@ import '/public/styles/normalize.scss';
 import '/public/styles/base.scss';
 
 import { MainLayout } from '../../layouts';
-import { About, Home, NotFound } from '../../pages';
+import { About, NotFound } from '../../pages';
 import { FullMap, IssueDetails, IssuesList, Organizations } from '../index';
 
 export const App: FC = (): JSX.Element => {
@@ -21,7 +21,7 @@ export const App: FC = (): JSX.Element => {
             <BrowserRouter>
               <Routes>
                 <Route path='/' element={<MainLayout />}>
-                  <Route index element={<Home />} />
+                  <Route index element={<About />} />
                   <Route path='/about' element={<About />} />
                   <Route path='/organizations' element={<Organizations />} />
                   <Route path='/issues' element={<IssuesList />} />

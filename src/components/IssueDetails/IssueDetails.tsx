@@ -4,10 +4,9 @@ import { useTranslation } from 'react-i18next';
 
 import './IssueDetails.styles.scss';
 
-import { Carousel } from '../Carousel/Carousel';
-import { Map } from '../Map/Map';
+import { Carousel, Map } from '../index';
 
-import { createMarkerHelper } from '../../helpers/createMarkerHelper';
+import { createMarker } from '../../helpers/createMarker';
 
 const IssueDetails: FC = (): JSX.Element => {
   const { t } = useTranslation();
@@ -27,7 +26,7 @@ const IssueDetails: FC = (): JSX.Element => {
     zoomControl: false,
   };
 
-  const markers = createMarkerHelper([data]);
+  const markers = createMarker([data]);
 
   return (
     <section className='issue-details'>
@@ -40,7 +39,7 @@ const IssueDetails: FC = (): JSX.Element => {
           <div className='details__info info'>
             <p className='info__issue-id'>
               {t('details.issue-id')}
-              <span>{data.id}</span>
+              <span>: {data.id}</span>
             </p>
 
             <hr />
@@ -48,12 +47,12 @@ const IssueDetails: FC = (): JSX.Element => {
             <p className='info__coordinates'>
               {t('details.coordinates')}
               <span>
-                [{data.point.lat} , {data.point.lon}]
+                : [{data.point.lat} , {data.point.lon}]
               </span>
             </p>
 
             <Map
-              initialMapState={mapState}
+              mapState={mapState}
               markers={markers}
               noPopupMarker
               whenReadyCb={setMap}
@@ -63,16 +62,16 @@ const IssueDetails: FC = (): JSX.Element => {
             <p className='info__status'>{data.status}</p>
             <p className='info__title'>
               {t('details.title')}
-              <span>{data.title}</span>
+              <span>: {data.title}</span>
             </p>
             <p className='info__description'>
               {t('details.description')}
-              <span>{data.description}</span>
+              <span>: {data.description}</span>
             </p>
 
             <p className='info__timestamp'>
               {t('details.create-timestamp')}
-              <span>{data.createdAt}</span>
+              <span>: {data.createdAt}</span>
             </p>
           </div>
         </div>

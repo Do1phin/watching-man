@@ -5,6 +5,7 @@ import { App } from './components';
 
 import '../i18n';
 
-const rootElement = document.getElementById('root');
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
 
-ReactDOM.render(<App />, rootElement);
+root.render(<App />);

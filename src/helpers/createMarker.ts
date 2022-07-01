@@ -1,4 +1,4 @@
-const createMarkerHelper = (data) => {
+const createMarker = (data) => {
   const markers = data.map((item) => {
     return {
       id: item.id,
@@ -10,4 +10,4 @@ const createMarkerHelper = (data) => {
   return markers ? markers : [];
 };
 
-export { createMarkerHelper };
+export { createMarker };

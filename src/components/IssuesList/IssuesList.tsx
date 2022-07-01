@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { map } from 'lodash';
 
-import { Issue } from '../Issue/Issue';
+import { Issue } from '../index';
 
 import { GET_ALL_ISSUES } from '../../apollo/operations/queries/allIssues';
 
@@ -24,7 +24,7 @@ const IssuesList = () => {
 
   const handleCreateIssue = (e) => {
     e.preventDefault();
-    navigate('/create-issue');
+    navigate('/map');
   };
 
   useEffect(() => {
