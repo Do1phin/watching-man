@@ -2,66 +2,77 @@ import React, { FC, useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { useTranslation } from 'react-i18next';
 import { useMyPosition } from '../Map/hooks/useMyPosition';
-import { concat } from 'lodash';
 
 import './FullMap.styles.scss';
 
 import { GET_ALL_ISSUES } from '../../apollo/operations';
 
-import { Map } from '../Map/Map';
-
-import { createMarkerHelper } from '../../helpers';
+import {
+  CreateIssue,
+  Map,
+  MyPositionButton,
+  draggableMarker,
+  markerLayer,
+  searchControl,
+} from '../index';
 
 const mapState = {
   attributionControl: false,
   center: [50.447844, 30.524545],
   doubleClickZoom: false,
   dragging: true,
-  maxZoom: 18,
   scrollWheelZoom: true,
   zoom: 7,
   zoomControl: true,
 };
 
+interface IAddress {
+  coords: {
+    lat: string;
+    lon: string;
+  };
+  address: {
+    building: string;
+    house_number: string;
+    road: string;
+    borough: string;
+    city: string;
+    postcode: string;
+    country: string;
+    country_code: string;
+  };
+}
+
+const mockAddress: IAddress = {
+  address: {
+    borough: 'Шевченковский район',
+    building: 'Дом профсоюзов',
+    city: 'Киев',
+    country: 'Украина',
+    country_code: 'ua',
+    house_number: '18/2',
+    postcode: '01001',
+    road: 'Крещатик улица',
+  },
+  coords: {
+    lat: '50.4432',
+    lon: '49.8596',
+  },
+};
+
 const FullMap: FC = (): JSX.Element => {
-  const [markers, setMarkers] = useState([]);
-  const { loading, data } = useQuery(GET_ALL_ISSUES);
-  const [map, setMap] = useState(null);
+  const { data, loading } = useQuery(GET_ALL_ISSUES);
   const { coords } = useMyPosition();
   const { t } = useTranslation();
-
-  const addAllMarkers = (data) => {
-    if (data) {
-      const markers = createMarkerHelper(data.allIssues);
-      setMarkers(markers);
-    }
-  };
-
-  const addMyMarker = () => {
-    if (coords.lat) {
-      const myMarker = {
-        point: {
-          lat: coords.lat,
-          lon: coords.lon,
-        },
-        status: 'MY',
-      };
-
-      const allMarkers = concat(markers, myMarker);
-      setMarkers(allMarkers);
-      setViewToCoords();
-    }
-  };
-
-  const setViewToCoords = () => {
-    map &&
-      map.target.flyTo([coords.lat, coords.lon], 17, {
-        duration: 3,
-      });
-  };
+  const [address, setAddress] = useState(mockAddress);
+  const [issues, setIssues] = useState([]);
+  const [createIssueMode, setCreateIssueMode] = useState(false);
+  const [myPositionMode, setMyPositionMode] = useState(false);
 
   useEffect(() => {
-    data && addAllMarkers(data);
+    if (data) {
+      setIssues(data.allIssues);
+    }
   }, [data]);
 
   if (loading) return <p className='hook-loading__msg'>{t('apollo.hook-loading')}</p>;
@@ -70,13 +81,25 @@ const FullMap: FC = (): JSX.Element => {
   return (
     <section className='full-map'>
       <div className='full-map__container'>
+        <CreateIssue
+          address={address}
+          setAddress={setAddress}
+          createIssueMode={createIssueMode}
+          setCreateIssueMode={setCreateIssueMode}
+        />
+        <MyPositionButton setMyPositionMode={setMyPositionMode} />
         <Map
-          addMyMarker={addMyMarker}
           data-class={'full-map'}
-          markers={markers}
-          initialMapState={mapState}
-          showSearch
-          whenReadyCb={setMap}
+          draggableMarker={draggableMarker}
+          searchControl={searchControl}
+          markerLayer={markerLayer}
+          markerCluster={true}
+          createIssueMode={createIssueMode}
+          setCreateIssueMode={setCreateIssueMode}
+          myPositionMode={myPositionMode}
+          issues={issues}
+          coords={coords}
+          mapState={mapState}
         />
       </div>
     </section>

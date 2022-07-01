@@ -2,8 +2,8 @@ import {
   blueMarker,
   grayMarker,
   greenMarker,
-  myMarker,
   orangeMarker,
+  positionPin,
   redMarker,
   yellowMarker,
 } from '../components/MarkerWrapper/customMarkers';
@@ -12,14 +12,14 @@ const markerIcons = {
   COMPLETED: greenMarker,
   CREATED: blueMarker,
   IN_PROGRESS: yellowMarker,
-  MY: myMarker,
+  MY: positionPin,
   PENDING: orangeMarker,
   REJECTED: redMarker,
   SEARCH: grayMarker,
 };
 
-const markerStyleHelper = (status) => {
+const changeMarkerStyle = (status) => {
   return markerIcons[status];
 };
 
-export { markerStyleHelper };
+export { changeMarkerStyle };

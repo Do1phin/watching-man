@@ -32,4 +32,12 @@ const myMarker = new L.Icon({
   shadowUrl: 'https://unpkg.com/leaflet@1.6/dist/images/marker-shadow.png',
 });
 
-export { blueMarker, redMarker, greenMarker, myMarker };
+const redPin = new L.Icon({
+  iconAnchor: [10, 41],
+  iconSize: [25, 41],
+  iconUrl: 'https://unpkg.com/leaflet@1.6/dist/images/marker-icon.png',
+  popupAnchor: [2, -40],
+  shadowUrl: 'https://unpkg.com/leaflet@1.6/dist/images/marker-shadow.png',
+});
+
+export { blueMarker, redMarker, greenMarker, myMarker, redPin };

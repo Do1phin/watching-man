@@ -1,5 +1,6 @@
 export { App } from './App/App';
 export { Carousel } from './Carousel/Carousel';
+export { CreateIssue } from './CreateIssue/CreateIssue';
 export { FlagDropdown } from './FlagDropdown/FlagDropdown';
 export { Footer } from './Footer/Footer';
 export { FullMap } from './FullMap/FullMap';
@@ -8,8 +9,16 @@ export { Issue } from './Issue/Issue';
 export { IssueDetails } from './IssueDetails/IssueDetails';
 export { IssuesList } from './IssuesList/IssuesList';
 export { Map } from './Map/Map';
-export { MarkerWrapper } from './MarkerWrapper/MarkerWrapper';
+export { MyPositionButton } from './Map/MyPositionButton';
 export { Organizations } from './Organizations/Organizations';
-export { SearchField } from './SearchField/SearchField';
+export { Popup } from './Map/Popup';
 export { SetCity } from './SetCity/SetCity';
+export { SetCityModal } from './SetCity/SetCityModal';
 export { Input } from './UI/Input/Input';
+export { Info } from './CreateIssue/Info';
+export { Uploader } from './Uploader/Uploader';
+
+export { draggableMarker } from './Marker/draggableMarker';
+export { markerLayer } from './MarkerWrapper/markersLayer';
+export { searchControl } from './Map/searchControl';
+export { getAddressFromCoords } from '../helpers/getAddressFromCoords';

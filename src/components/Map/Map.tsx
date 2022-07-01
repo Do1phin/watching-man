@@ -1,60 +1,134 @@
-import React, { FC, useEffect, useState } from 'react';
-import { useLazyQuery } from '@apollo/client';
-import { MapContainer, TileLayer } from 'react-leaflet';
-import { useTranslation } from 'react-i18next';
+import React, { FC, useEffect, useRef, useState } from 'react';
+import L from 'leaflet';
+import _ from 'lodash';
 
+import './Map.styles.scss';
 import 'leaflet.markercluster/dist/leaflet.markercluster';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
-import './Map.styles.scss';
 
-import { MarkerWrapper, SearchField } from '../index';
+import { esriWorldImagery, googleHybrid, googleSat, googleStreets, osm } from './mapLayers';
 
-import { GET_ALL_ISSUES } from '../../apollo/operations';
+import { generateMarker } from '../Marker/generateMarker';
+import { myMarker } from '../MarkerWrapper/customMarkers';
+
+const initialMapState = {
+  attributionControl: false,
+  center: [50.447844, 30.524545],
+  doubleClickZoom: false,
+  dragging: true,
+  maxZoom: 18,
+  minZoom: 2,
+  scrollWheelZoom: true,
+  zoom: 7,
+  zoomControl: true,
+};
 
 const Map: FC = (props): JSX.Element => {
   const {
-    markers,
-    showSearch,
-    whenReadyCb,
-    initialMapState,
-    noPopupMarker,
-    addMyMarker,
-    setAddress,
+    draggableMarker,
+    searchControl,
+    markerCluster,
+    mapState,
+    createIssueMode,
+    myPositionMode,
+    issues,
+    coords,
   } = props;
-  const { t } = useTranslation();
-  const [issues, setIssues] = useState([]);
 
-  const [getIssues, { data }] = useLazyQuery(GET_ALL_ISSUES);
+  const [map, setMap] = useState(null);
+  const [layerControl, setLayerControl] = useState(null);
+
+  const mapRef = useRef(null);
+  const layerControlRef = useRef(null);
 
   useEffect(() => {
-    getIssues().then(({ data }) => {
-      setIssues(data.allIssues);
-    });
-  }, [data]);
+    mapRef.current = L.map('map', { ...initialMapState, ...mapState });
+    setMap(mapRef.current);
+  }, []);
+
+  useEffect(() => {
+    if (!map) return;
+    if (map) {
+      layerControlRef.current = L.control
+        .layers({
+          'ESRI World': esriWorldImagery,
+          'Google Hybrid': googleHybrid,
+          'Google Satellite': googleSat,
+          'Google Streets': googleStreets,
+          OpenStreetMap: osm,
+        })
+        .addTo(map);
+
+      osm.addTo(map);
+      setLayerControl(layerControlRef.current);
+    }
+  }, [map]);
+
+  useEffect(() => {
+    if (!map) return;
+    if (map && searchControl) {
+      map.addControl(searchControl);
+      return () => map.removeControl(searchControl);
+    }
+  }, [map, searchControl]);
+
+  useEffect(() => {
+    if (!map) return;
+    if (map && draggableMarker) {
+      createIssueMode && draggableMarker.addTo(mapRef.current);
+      return () => map.removeLayer(draggableMarker);
+    }
+  }, [map, createIssueMode, draggableMarker]);
+
+  useEffect(() => {
+    if (!map) return;
+    if (map && myPositionMode && coords) {
+      const setMarkerToPosition = (coords) => {
+        map.layerPointToLatLng([coords.lat, coords.lon]);
+        L.marker([coords.lat, coords.lon], { icon: myMarker }).addTo(map);
+      };
+
+      const flyToPosition = (coords) => {
+        map.flyTo([coords.lat, coords.lon], 17, {
+          duration: 3,
+        });
+      };
+
+      setMarkerToPosition(coords);
+      flyToPosition(coords);
+      // return () => map.removeLayer(draggableMarker);
+    }
+  }, [map, myPositionMode, coords]);
+
+  useEffect(() => {
+    if (!map) return;
+    if (map) {
+      const markerLayer = L.layerGroup();
+
+      _.map(issues, (item) => {
+        const marker = generateMarker(item);
+        marker.addTo(markerLayer);
+      });
+
+      if (markerCluster) {
+        const markerClusters = L.markerClusterGroup({
+          animate: true,
+          animateAddingMarkers: false,
+          removeOutsideVisibleBounds: true,
+          showCoverageOnHover: true,
+          spiderfyOnMaxZoom: true,
+          zoomToBoundsOnClick: true,
+        });
+        markerClusters.addLayer(markerLayer);
+        map.addLayer(markerClusters);
+      }
+    }
+  }, [map, issues]);
 
   return (
     <>
-      <MapContainer whenReady={whenReadyCb} {...initialMapState}>
-        {addMyMarker && (
-          <button className='my-position-button' onClick={addMyMarker}>
-            {t('map.my-position')}
-          </button>
-        )}
-
-        {showSearch && <SearchField />}
-
-        {markers.length && <MarkerWrapper markers={markers} noPopupMarker={noPopupMarker} />}
-
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-        />
-        {/*<ControlGeocoder*/}
-        {/*  coords={{ lat: 50.372937746926254, lng: 30.528430938720707 }}*/}
-        {/*  cb={setAddress}*/}
-        {/*/>*/}
-      </MapContainer>
+      <div id='map' className='map' />
     </>
   );
 };

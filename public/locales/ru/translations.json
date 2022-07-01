@@ -17,14 +17,24 @@
     }
   },
   "map": {
-    "my-position": "Моё местоположение"
+    "my-position": "Моё местоположение",
+    "lat": "Долгота",
+    "lon": "Широта",
+    "building": "Здание",
+    "borough": "Район",
+    "country": "Страна",
+    "country-code": "Код страны",
+    "city": "Город",
+    "postcode": "Индекс",
+    "road": "Улица",
+    "house-number": "Дом"
   },
   "details": {
-    "issue-id": "id обращения: ",
-    "title": "Тема обращения: ",
-    "description": "Описание: ",
-    "coordinates": "Координаты: ",
-    "create-timestamp": "Дата обращения: "
+    "issue-id": "id обращения",
+    "title": "Тема обращения",
+    "description": "Описание",
+    "coordinates": "Координаты",
+    "create-timestamp": "Дата обращения"
   },
   "set-city": {
     "modal-error-permission": "К сожалению вы не предоставили доступ к геолокации браузера \uD83D\uDE25",
@@ -32,7 +42,10 @@
   },
   "issues": {
     "empty-list": "Пока не создано ни одного обращения",
-    "create-issue": "Создать обращение"
+    "create-issue": "Создать обращение",
+    "drag-and-drop": "Перетащите, пожалуйста, фотографии",
+    "no-photo-title": "Вы можете прикрепить до 10 фотографий",
+    "save-issue": "Сохранить"
   },
   "organizations": {
     "empty-list": "Пока не добавлено ни одной организации",
@@ -40,6 +53,9 @@
   },
   "apollo": {
     "hook-loading": "Загрузка ...",
-    "hook-error": "Ошибка! "
+    "hook-error": "Ошибка! \uD83D\uDE27",
+    "hook-success": "Спасибо!",
+    "hook-create-issue-error": "К сожалению, обращение не создано",
+    "hook-create-issue-created": "Обращение успешно создано"
   }
 }
