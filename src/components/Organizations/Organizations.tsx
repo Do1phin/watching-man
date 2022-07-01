@@ -115,7 +115,7 @@ const Organizations: FC = (): JSX.Element => {
   if (error) return <p className='hook-error__msg'>{t('apollo.hook-error')} 😧</p>;
 
   const mapState = {
-    attributionControl: false,
+    attributionControl: true,
     center: [50.447844, 30.524545],
     doubleClickZoom: false,
     dragging: true,

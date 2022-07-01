@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -10,13 +10,11 @@ import { createMarker } from '../../helpers/createMarker';
 
 const IssueDetails: FC = (): JSX.Element => {
   const { t } = useTranslation();
-  const [map, setMap] = useState(null);
-  const [address, setAddress] = useState('');
   const location = useLocation();
   const data = location.state;
 
   const mapState = {
-    attributionControl: false,
+    attributionControl: true,
     center: [data.point.lat, data.point.lon],
     doubleClickZoom: false,
     dragging: false,
@@ -51,13 +49,7 @@ const IssueDetails: FC = (): JSX.Element => {
               </span>
             </p>
 
-            <Map
-              mapState={mapState}
-              markers={markers}
-              noPopupMarker
-              whenReadyCb={setMap}
-              // setAddress={setAddress}
-            />
+            <Map mapState={mapState} markers={markers} noPopupMarker />
 
             <p className='info__status'>{data.status}</p>
             <p className='info__title'>
