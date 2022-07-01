@@ -12,18 +12,6 @@ import { esriWorldImagery, googleHybrid, googleSat, googleStreets, osm } from '.
 import { generateMarker } from '../Marker/generateMarker';
 import { myMarker } from '../MarkerWrapper/customMarkers';
 
-const initialMapState = {
-  attributionControl: false,
-  center: [50.447844, 30.524545],
-  doubleClickZoom: false,
-  dragging: true,
-  maxZoom: 18,
-  minZoom: 2,
-  scrollWheelZoom: true,
-  zoom: 7,
-  zoomControl: true,
-};
-
 const Map: FC = (props): JSX.Element => {
   const {
     draggableMarker,
@@ -40,7 +28,26 @@ const Map: FC = (props): JSX.Element => {
   const [layerControl, setLayerControl] = useState(null);
 
   const mapRef = useRef(null);
+  const tileRef = useRef(null);
   const layerControlRef = useRef(null);
+
+  tileRef.current = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  });
+
+  const initialMapState = {
+    attributionControl: true,
+    center: [50.447844, 30.524545],
+    doubleClickZoom: false,
+    dragging: true,
+    layers: [tileRef.current],
+    maxZoom: 18,
+    minZoom: 2,
+    scrollWheelZoom: true,
+    zoom: 7,
+    zoomControl: true,
+  };
 
   useEffect(() => {
     mapRef.current = L.map('map', { ...initialMapState, ...mapState });
