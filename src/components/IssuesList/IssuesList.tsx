@@ -32,7 +32,7 @@ const IssuesList = () => {
   }, [data]);
 
   if (loading) return <p className='hook-loading__msg'>{t('apollo.hook-loading')}</p>;
-  if (error) return <p className='hook-error__msg'>{t('apollo.hook-error')} 😧</p>;
+  if (error) return <p className='hook-error__msg'>{t('apollo.hook-error')}</p>;
 
   return (
     <>
