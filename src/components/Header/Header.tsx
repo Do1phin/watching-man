@@ -1,7 +1,8 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import cx from 'classnames';
+import { debounce } from 'lodash';
 
 import './Header.styles.scss';
 
@@ -12,10 +13,35 @@ import siteLogoImg from '/public/images/site-logo-transp.png';
 export const Header: FC = (): JSX.Element => {
   const { t } = useTranslation();
   const [isOpen, setOpen] = useState<boolean>(false);
+  const [dimensions, setDimensions] = React.useState({
+    height: window.innerHeight,
+    width: window.innerWidth,
+  });
 
   const toggleOpenBurger = () => {
     return setOpen(!isOpen);
   };
+
+  useEffect(() => {
+    const debouncedHandleResize = debounce(() => {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth,
+      });
+    }, 400);
+
+    window.addEventListener('resize', debouncedHandleResize);
+
+    return () => {
+      window.removeEventListener('resize', debouncedHandleResize);
+    };
+  });
+
+  useEffect(() => {
+    if (dimensions.width > 970) {
+      setOpen(false);
+    }
+  }, [dimensions.width]);
 
   return (
     <>
