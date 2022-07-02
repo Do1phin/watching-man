@@ -51,8 +51,6 @@ export const Header: FC = (): JSX.Element => {
             <Link to='/'>
               <img
                 src={siteLogoImg}
-                width='75'
-                height='45'
                 alt='site-logo'
                 className='header__logo'
                 aria-label='Логотип сайта'
