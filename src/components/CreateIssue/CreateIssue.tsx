@@ -1,7 +1,7 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import cx from 'classnames';
-import { delay } from 'lodash';
+import { debounce, delay } from 'lodash';
 
 import './CreateIssue.styles.scss';
 
@@ -33,14 +33,17 @@ const CreateIssue: FC = (props): JSX.Element => {
     },
   });
 
+  const debounceAddIssue = useMemo(() => debounce(() => addIssue(), 1000), [addIssue]);
+
   const handleClickShowBtn = (e) => {
     e.preventDefault();
     setCreateIssueMode(true);
     return setIsShow(true);
   };
 
-  const handleClickSaveBtn = () => {
-    addIssue();
+  const handleClickSaveBtn = (e) => {
+    e.preventDefault();
+    debounceAddIssue();
   };
 
   const handleClickCloseForm = (e) => {
@@ -200,10 +203,7 @@ const CreateIssue: FC = (props): JSX.Element => {
               <Uploader />
 
               <div className='create-issue__save-btn-block'>
-                <button
-                  className='create-issue__save-btn'
-                  onClick={handleClickSaveBtn}
-                  disabled={!isValid}>
+                <button className='create-issue__save-btn' onClick={handleClickSaveBtn}>
                   {t('issues.save-issue')}
                 </button>
               </div>

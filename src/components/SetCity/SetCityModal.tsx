@@ -1,11 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import Modal from 'react-modal';
 import { debounce } from 'lodash';
 
 import './SetCityModal.styles.scss';
 
-import { Input } from '../UI/Input/Input';
+import { Input } from '../index';
 
 const SetCityModal = (props) => {
   const { isOpen, setIsOpen, setLocality } = props;
@@ -13,13 +13,14 @@ const SetCityModal = (props) => {
   const inputRef = useRef(null);
   const { t } = useTranslation();
 
+  const handleChange = useMemo(
+    () => debounce((e) => setLocality(e.target.value), 1000),
+    [setLocality],
+  );
+
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };
-
-  const handleChange = debounce((e) => {
-    setLocality(e.target.value);
-  }, 2000);
 
   const initialState = {
     maxLength: 168,
